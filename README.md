@@ -1,5 +1,7 @@
 == README
 
+[![Stories in Ready](https://badge.waffle.io/dglunz/dinner_dash.png?label=ready&title=Ready)](http://waffle.io/dglunz/dinner_dash)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
