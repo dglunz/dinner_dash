@@ -1,30 +1,5 @@
-== README
+# Dinner Dash
 
 [![Stories in Ready](https://badge.waffle.io/dglunz/dinner_dash.png?label=ready&title=Ready)](http://waffle.io/dglunz/dinner_dash)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+[ ![Codeship Status for dglunz/dinner_dash](https://codeship.com/projects/29d38850-50b1-0132-7beb-5a2e61fe1d89/status?branch=master)](https://codeship.com/projects/48121)
