@@ -63,4 +63,8 @@ RSpec.describe User, type: :model do
     user.password_confirmation = nil
     expect(user).to_not be_valid
   end
+
+  it 'is not an admin by default' do
+    expect(user.admin).to be false
+  end
 end
