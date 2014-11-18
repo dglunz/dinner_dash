@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'address/index'
+
+  get 'address/show'
+
+  get 'address/new'
+
+  get 'address/edit'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
