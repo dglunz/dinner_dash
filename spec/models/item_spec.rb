@@ -1,11 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Item, :type => :model do
+  let(:category) { Category.new(name: 'breakfast') }
   let(:item) { Item.new(valid_attributes) }
   let(:valid_attributes) { {
     title: 'coffee',
     description: 'legal stimulants for cheap',
-    price: 2.99
+    price: 2.99,
+    categories: [category]
   } }
 
   it 'is valid' do
@@ -27,7 +29,13 @@ RSpec.describe Item, :type => :model do
     expect(item).to be_invalid
   end
 
-  xit 'belongs to at least one category' do
+  it 'belongs to at least one category' do
+    item.categories = []
+    expect(item).to be_invalid
+  end
+
+  it 'should connect to categories' do
+    expect(item.categories.first.name).to eq('breakfast')
   end
 
   it 'is not valid if title is an empty' do
