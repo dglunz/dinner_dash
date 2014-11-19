@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118020250) do
+ActiveRecord::Schema.define(version: 20141118204826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,28 @@ ActiveRecord::Schema.define(version: 20141118020250) do
     t.string   "state"
     t.string   "zip_code"
     t.integer  "order_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories_items", id: false, force: true do |t|
+    t.integer "category_id", null: false
+    t.integer "item_id",     null: false
+  end
+
+  add_index "categories_items", ["category_id", "item_id"], name: "index_categories_items_on_category_id_and_item_id", using: :btree
+  add_index "categories_items", ["item_id", "category_id"], name: "index_categories_items_on_item_id_and_category_id", using: :btree
+
+  create_table "items", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.decimal  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
