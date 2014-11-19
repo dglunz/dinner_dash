@@ -10,14 +10,14 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to users_path, notice: "Welcome to Dinner Dash, #{user.name}."
     else
-      redirect_to login_path, notice: "We could not log you in. Please try again."
+      redirect_to login_path, notice: 'We could not log you in. Please try again.'
     end
   end
 
   def destroy
     session.clear
 
-    redirect_to root_path, notice: "You are logged out."
+    redirect_to root_path, notice: 'You are logged out.'
   end
 
   private
