@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get '/about' => 'pages#about'
 
+  resources :items
+
   resources :users, only: [:new, :create, :index]
 
   get    '/login',  to: "sessions#new"
