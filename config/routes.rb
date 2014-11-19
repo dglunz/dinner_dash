@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   resources :addresses
 
+  root 'pages#index'
+
+  get '/about' => 'pages#about'
+
   resources :items
-  
-  root 'users#index'
 
   resources :users, only: [:new, :create, :index]
 
