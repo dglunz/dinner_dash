@@ -2,7 +2,18 @@ require 'rails_helper'
 require 'capybara/rails'
 require 'capybara/rspec'
 
-describe 'the application', type: :feature do
+describe 'Application authentication', type: :feature do
+
+  it 'creates a new user' do
+    visit root_path
+    click_link 'Sign Up'
+    fill_in 'Name', with: 'Name'
+    fill_in 'Email', with: 'email@email.com'
+    fill_in 'Password', with: 'password'
+    fill_in 'Password confirmation', with: 'password'
+    click_button 'Submit'
+    expect(page).to have_content('User created.')
+  end
 
   context 'when logged out' do
     before(:each) do
@@ -24,26 +35,17 @@ describe 'the application', type: :feature do
 
   context 'when logged in' do
 
-    xit 'creates and logs in a new user' do
-      visit root_path
-      click_link 'Sign Up'
-      fill_in "Name", :with => "Name"
-      fill_in "Email", :with => "email@email.com"
-      fill_in "Password", :with => "password"
-      fill_in "Password confirmation", :with => "password"
-      click_button 'Submit'
-      expect(page).to have_content('User created.')
-
-      click_link 'Login'
-      expect(page).to have_link('Login', href: login_path)
-      fill_in "Email", :with => "email@email.com"
-      fill_in "Password", :with => "password"
-      expect(page).to have_link('Logout', href: logout_path)
+    it 'logs in an existing user' do
+      user = FactoryGirl.create(:user)
+      visit login_path
+      fill_in 'Email', with: user.email
+      fill_in 'Password', with: user.password
+      click_button 'Login'
+      expect(page).to have_content('Logout')
     end
 
-    xit 'does not have a login link' do
+    it 'does not have a login link' do
       expect(page).not_to have_link('Login', href: login_path)
     end
   end
 end
-
