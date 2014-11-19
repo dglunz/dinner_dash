@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  get 'address/index'
-
-  get 'address/show'
-
-  get 'address/new'
-
-  get 'address/edit'
+  resources :addresses
 
   root 'pages#index'
 
@@ -18,4 +12,5 @@ Rails.application.routes.draw do
   get    '/login',  to: "sessions#new"
   post   '/login',  to: "sessions#create"
   delete '/logout', to: "sessions#destroy"
+
 end
