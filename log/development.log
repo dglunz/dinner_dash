@@ -212,3 +212,183 @@ ActionController::RoutingError (No route matches [GET] "/index"):
   Rendered /Users/adamsmith/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (54.1ms)
   [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateItems (20141117185842)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (4.4ms)[0m  [1mCREATE TABLE "items" ("id" serial primary key, "title" character varying(255), "description" character varying(255), "price" decimal, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141117185842"]]
+  [1m[36m (354.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCategories (20141118204530)
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "categories" ("id" serial primary key, "name" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141118204530"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCategoryItemsJoinTable (20141118204826)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "categories_items" ("category_id" integer NOT NULL, "item_id" integer NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE  INDEX  "index_categories_items_on_category_id_and_item_id" ON "categories_items"  ("category_id", "item_id")
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX  "index_categories_items_on_item_id_and_category_id" ON "categories_items"  ("item_id", "category_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141118204826"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddAttachmentPhotoToItems (20141118221218)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "items" ADD COLUMN "photo_file_name" character varying(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "items" ADD COLUMN "photo_content_type" character varying(255)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "items" ADD COLUMN "photo_file_size" integer[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "items" ADD COLUMN "photo_updated_at" timestamp
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141118221218"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-19 11:41:37 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (10.6ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (12.2ms)
+  Rendered layouts/_notices.html.erb (0.7ms)
+Completed 200 OK in 499ms (Views: 478.3ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/assets/address.css?body=1" for 127.0.0.1 at 2014-11-19 11:41:38 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 11:41:38 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 11:41:38 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 11:41:38 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-19 11:41:38 -0700
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-11-19 11:41:38 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 11:41:38 -0700
+
+
+Started GET "/addresses" for 127.0.0.1 at 2014-11-19 11:41:49 -0700
+Processing by AddressesController#index as HTML
+  [1m[36mAddress Load (10.5ms)[0m  [1mSELECT "addresses".* FROM "addresses"[0m
+  Rendered addresses/index.html.erb within layouts/application (12.3ms)
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 60ms (Views: 46.9ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/addresses/new" for 127.0.0.1 at 2014-11-19 11:42:39 -0700
+Processing by AddressesController#new as HTML
+  Rendered addresses/_form.html.erb (52.2ms)
+  Rendered addresses/new.html.erb within layouts/application (72.1ms)
+Completed 500 Internal Server Error in 78ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"addresses"} missing required keys: [:id]):
+    2: 
+    3: <%= render "form" %>
+    4: 
+    5: <%= link_to "Back", address_path %>
+  app/views/addresses/new.html.erb:5:in `_app_views_addresses_new_html_erb__2168355665492129181_70288797023640'
+
+
+  Rendered /Users/adamsmith/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/adamsmith/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/adamsmith/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.0ms)
+
+
+Started GET "/addresses/new" for 127.0.0.1 at 2014-11-19 11:42:39 -0700
+Processing by AddressesController#new as HTML
+  Rendered addresses/_form.html.erb (3.6ms)
+  Rendered addresses/new.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"addresses"} missing required keys: [:id]):
+    2: 
+    3: <%= render "form" %>
+    4: 
+    5: <%= link_to "Back", address_path %>
+  app/views/addresses/new.html.erb:5:in `_app_views_addresses_new_html_erb__2168355665492129181_70288790077220'
+
+
+  Rendered /Users/adamsmith/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/adamsmith/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/adamsmith/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.5ms)
+
+
+Started GET "/addresses/new" for 127.0.0.1 at 2014-11-19 11:43:28 -0700
+Processing by AddressesController#new as HTML
+  Rendered addresses/_form.html.erb (3.1ms)
+  Rendered addresses/new.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 64ms (Views: 63.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/address.css?body=1" for 127.0.0.1 at 2014-11-19 11:43:28 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 11:43:28 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 11:43:28 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 11:43:28 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-19 11:43:28 -0700
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-11-19 11:43:28 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 11:43:28 -0700
+
+
+Started POST "/addresses" for 127.0.0.1 at 2014-11-19 11:43:53 -0700
+Processing by AddressesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aCBYhYkDpauYCy0kcglU1gvp44vzEVaH9bgPJG2TxHo=", "address"=>{"street_name"=>"blah", "street_number"=>"900", "city"=>"City", "state"=>"State", "zip_code"=>"90210"}, "commit"=>"Create Address"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "City"], ["created_at", "2014-11-19 18:43:53.289001"], ["state", "State"], ["street_name", "blah"], ["street_number", "900"], ["updated_at", "2014-11-19 18:43:53.289001"], ["zip_code", "90210"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://0.0.0.0:8080/addresses/1
+Completed 302 Found in 8ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/addresses/1" for 127.0.0.1 at 2014-11-19 11:43:53 -0700
+Processing by AddressesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAddress Load (0.3ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered addresses/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/address.css?body=1" for 127.0.0.1 at 2014-11-19 11:43:53 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-19 11:43:53 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 11:43:53 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-19 11:43:53 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-19 11:43:53 -0700
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-11-19 11:43:53 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 11:43:53 -0700
+
+
+Started GET "/addresses" for 127.0.0.1 at 2014-11-19 11:43:57 -0700
+Processing by AddressesController#index as HTML
+  [1m[35mAddress Load (0.3ms)[0m  SELECT "addresses".* FROM "addresses"
+  Rendered addresses/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_notices.html.erb (0.5ms)
+Completed 200 OK in 35ms (Views: 34.5ms | ActiveRecord: 0.3ms)

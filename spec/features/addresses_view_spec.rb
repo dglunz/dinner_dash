@@ -1,14 +1,21 @@
 require 'rails_helper'
+require 'capybara/rails'
+require 'capybara/rspec'
 
-describe 'the address view', type: :feature do 
-  # let(:address) { Address.create(street_name: "Bad Street", street_number: "8000",
-  #                                 city: "Beverly Hills", state: "CA", zip_code: "90210")}
+describe 'the addresses view', type: :feature do 
+  let(:addresses) { [Address.create(street_name: "Bad Street", street_number: "8000",
+                                  city: "Beverly Hills", state: "CA", zip_code: "90210"),
+                    Address.create(street_name: "Bad Street", street_number: "8000",
+                                  city: "Beverly Hills", state: "CA", zip_code: "90210")]
+                                   }
 
-  # before(:each) do 
-  #   address.orders.create(order_id: 1)
-  #   address.orders.create(order_id: 5)
-  #   visit address_path(address)
-  # end
+  before(:each) do 
+    visit addresses_path(addresses)
+  end
+
+  it "shows the addresses" do
+    expect(page).to have_content(addresses.first.street_name)
+  end
 
   # it 'shows the orders' do
   #   addresses.orders.each do |order|
