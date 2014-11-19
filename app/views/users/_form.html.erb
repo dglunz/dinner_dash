@@ -9,23 +9,36 @@
       <% end %>
       </ul>
     </div>
+    <% end %>
   <% end %>
 
-<%= form_for(@user) do |f| %>
-	<p><%= f.label :name %>
-	  <%= f.text_field :name %></p>
+<div class="container">
+  <div class="col-sm-12">
+    <%= form_for(@user) do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :display_name %>
+        <%= f.text_field :display_name, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.text_field :email, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Submit", class: "form-control btn btn-success" %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-	<p><%= f.label :display_name %>
-	  <%= f.text_field :display_name %></p>
-
-	<p><%= f.label :email %>
-	  <%= f.text_field :email %></p>
-
-	<p><%= f.label :password %>
-	  <%= f.password_field :password %></p>
-
-	<p><%= f.label :password_confirmation %>
-	  <%= f.password_field :password_confirmation %></p>
-
-	<%= f.submit 'Submit' %>
-<% end %>
