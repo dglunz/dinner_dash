@@ -15,6 +15,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :categories %>
+    <%= form.collection_select :category_ids, Category.all, :id, :name, {}, {multiple: true } %>
+  </div>
+
+  <div class="field">
     <%= form.label :photo %>
     <%= form.file_field :photo %>
   </div>
