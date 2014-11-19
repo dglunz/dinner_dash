@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   get 'address/edit'
 
-  root 'users#index'
+  root 'pages#index'
+
+  get '/about' => 'pages#about'
 
   resources :users, only: [:new, :create, :index]
 
