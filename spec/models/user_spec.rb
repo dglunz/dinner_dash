@@ -15,6 +15,11 @@ RSpec.describe User, type: :model do
     expect(user).to_not be_valid
   end
 
+  it 'is valid without a display name' do
+    user.display_name = nil
+    expect(user).to be_valid
+  end
+
   it 'is invalid if optional display name is too short' do
     user.display_name = 'A'
     expect(user).to_not be_valid
@@ -24,6 +29,7 @@ RSpec.describe User, type: :model do
     user.display_name = ('A' * 33)
     expect(user).to_not be_valid
   end
+
   it 'is invalid without an email address' do
     user.email = nil
     expect(user).to_not be_valid
@@ -62,5 +68,9 @@ RSpec.describe User, type: :model do
   it 'is invalid if password confirmation is nil' do
     user.password_confirmation = nil
     expect(user).to_not be_valid
+  end
+
+  it 'is not an admin by default' do
+    expect(user.admin).to be false
   end
 end
