@@ -17,6 +17,10 @@ describe 'the addresses view', type: :feature do
     expect(page).to have_content(addresses.first.street_name)
   end
 
+  it "has a link to add a new address" do
+    expect(page).to have_link("New Address", href: new_address_path) 
+  end
+
   # it 'shows the orders' do
   #   addresses.orders.each do |order|
   #     expect(page).to have_content(address.order)

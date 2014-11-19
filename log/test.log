@@ -9502,3 +9502,1434 @@ Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.5ms)
   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
   [1m[35m (0.1ms)[0m  BEGIN
   [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:45:45.693578"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:45:45.693578"], ["zip_code", "90210"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#index as HTML
+  Rendered addresses/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+  [1m[35mAddress Load (0.7ms)[0m  SELECT "addresses".* FROM "addresses"
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:45:45.710142"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:45:45.710142"], ["zip_code", "90210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#show as HTML
+  Parameters: {"id"=>"186"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 186]]
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by AddressesController#new as HTML
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:45:45.721956"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:45:45.721956"], ["zip_code", "90210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#edit as HTML
+  Parameters: {"id"=>"187"}
+  [1m[35mAddress Load (0.4ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 187]]
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "addresses"[0m
+Processing by AddressesController#create as HTML
+  Parameters: {"address"=>{"street_name"=>"Bad Street", "street_number"=>"8000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:45:45.731621"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:45:45.731621"], ["zip_code", "90210"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/addresses/188
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "addresses"[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by AddressesController#create as HTML
+  Parameters: {"address"=>{"street_name"=>"Bad Street", "street_number"=>"8000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:45:45.737322"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:45:45.737322"], ["zip_code", "90210"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/addresses/189
+Completed 302 Found in 2ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by AddressesController#create as HTML
+  Parameters: {"address"=>{"street_name"=>"Bad Street", "street_number"=>"8000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:45:45.742770"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:45:45.742770"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/addresses/190
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[35mAddress Load (0.5ms)[0m  SELECT  "addresses".* FROM "addresses"   ORDER BY "addresses"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by AddressesController#create as HTML
+  Parameters: {"address"=>{"street_name"=>nil, "street_number"=>nil, "city"=>nil, "state"=>nil, "zip_code"=>nil}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 27ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by AddressesController#create as HTML
+  Parameters: {"address"=>{"street_name"=>nil, "street_number"=>nil, "city"=>nil, "state"=>nil, "zip_code"=>nil}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:45:45.786011"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:45:45.786011"], ["zip_code", "90210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#update as HTML
+  Parameters: {"address"=>{"street_name"=>"Good Street", "street_number"=>"7000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}, "id"=>"191"}
+  [1m[35mAddress Load (0.4ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 191]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "addresses" SET "street_name" = $1, "street_number" = $2, "updated_at" = $3 WHERE "addresses"."id" = 191  [["street_name", "Good Street"], ["street_number", "7000"], ["updated_at", "2014-11-19 19:45:45.790202"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/addresses/191
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+  [1m[35mAddress Load (0.4ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 191]]
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:45:45.795368"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:45:45.795368"], ["zip_code", "90210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#update as HTML
+  Parameters: {"address"=>{"street_name"=>"Bad Street", "street_number"=>"8000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}, "id"=>"192"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 192]]
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/addresses/192
+Completed 302 Found in 2ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:45:45.801178"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:45:45.801178"], ["zip_code", "90210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#update as HTML
+  Parameters: {"address"=>{"street_name"=>"Bad Street", "street_number"=>"8000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}, "id"=>"193"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 193]]
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/addresses/193
+Completed 302 Found in 2ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:45:45.806947"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:45:45.806947"], ["zip_code", "90210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#update as HTML
+  Parameters: {"address"=>{"street_name"=>nil, "street_number"=>nil, "city"=>nil, "state"=>nil, "zip_code"=>nil}, "id"=>"194"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 194]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:45:45.815466"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:45:45.815466"], ["zip_code", "90210"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#update as HTML
+  Parameters: {"address"=>{"street_name"=>nil, "street_number"=>nil, "city"=>nil, "state"=>nil, "zip_code"=>nil}, "id"=>"195"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 195]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:45:45.824291"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:45:45.824291"], ["zip_code", "90210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "addresses"
+Processing by AddressesController#destroy as HTML
+  Parameters: {"id"=>"196"}
+  [1m[36mAddress Load (0.2ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1[0m  [["id", 196]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "addresses" WHERE "addresses"."id" = $1[0m  [["id", 196]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/addresses
+Completed 302 Found in 2ms (ActiveRecord: 0.9ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "addresses"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:45:45.830891"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:45:45.830891"], ["zip_code", "90210"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:45:45.832350"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:45:45.832350"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/addresses.197%2F198" for 127.0.0.1 at 2014-11-19 12:45:45 -0700
+Processing by AddressesController#index as 
+  [1m[35mAddress Load (0.7ms)[0m  SELECT "addresses".* FROM "addresses"
+  Rendered layouts/_notices.html.erb (0.6ms)
+Completed 200 OK in 65ms (Views: 55.7ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-11-19 12:45:45 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered layouts/_notices.html.erb (0.4ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.8ms)
+Started GET "/users/new" for 127.0.0.1 at 2014-11-19 12:45:45 -0700
+Processing by UsersController#new as HTML
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 29ms (Views: 26.7ms | ActiveRecord: 1.7ms)
+Started POST "/users" for 127.0.0.1 at 2014-11-19 12:45:45 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"Name", "display_name"=>"", "email"=>"email@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('email@email.com') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "display_name", "email", "name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-11-19 19:45:45.983736"], ["display_name", ""], ["email", "email@email.com"], ["name", "Name"], ["password_digest", "$2a$04$2wC9eWLACTllLEGEOBXE2eyq/Hik4fOZjjQYIROIRpRwcCzT0oXom"], ["updated_at", "2014-11-19 19:45:45.983736"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/login
+Completed 302 Found in 30ms (ActiveRecord: 1.6ms)
+Started GET "/login" for 127.0.0.1 at 2014-11-19 12:45:45 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-11-19 12:45:45 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-11-19 12:45:46 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-11-19 12:45:46 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('cave@aperturelabs.com') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-11-19 19:45:46.017270"], ["email", "cave@aperturelabs.com"], ["name", "Cave Johnson"], ["password_digest", "$2a$04$HVOd0POm5mXyazCTKLPy3O8lY9bjlmHUUZmzaCED9bjfAJgkdoI.2"], ["updated_at", "2014-11-19 19:45:46.017270"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2014-11-19 12:45:46 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2014-11-19 12:45:46 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"cave@aperturelabs.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'cave@aperturelabs.com' LIMIT 1[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+Started GET "/users" for 127.0.0.1 at 2014-11-19 12:45:46 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  Rendered layouts/_notices.html.erb (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 44]]
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mItem Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = 'a' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("created_at", "description", "price", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-11-19 19:45:46.096891"], ["description", "aa"], ["price", "1.99"], ["title", "a"], ["updated_at", "2014-11-19 19:45:46.096891"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2014-11-19 19:45:46.098771"], ["name", "lunch"], ["updated_at", "2014-11-19 19:45:46.098771"]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "categories_items" ("category_id", "item_id") VALUES ($1, $2)  [["category_id", 29], ["item_id", 29]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "items" INNER JOIN "categories_items" ON "items"."id" = "categories_items"."item_id" WHERE "categories_items"."category_id" = $1  [["category_id", 29]]
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mItem Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mItem Exists (0.3ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mItem Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mItem Exists (0.3ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mItem Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mItem Exists (0.3ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = '' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mItem Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mItem Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("created_at", "description", "price", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-11-19 19:45:46.136256"], ["description", "legal stimulants for cheap"], ["price", "2.99"], ["title", "coffee"], ["updated_at", "2014-11-19 19:45:46.136256"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2014-11-19 19:45:46.137380"], ["name", "breakfast"], ["updated_at", "2014-11-19 19:45:46.137380"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories_items" ("category_id", "item_id") VALUES ($1, $2)  [["category_id", 30], ["item_id", 30]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mItem Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mItem Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1[0m
+  [1m[35mItem Exists (0.3ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'espresso' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mItem Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mItem Exists (0.4ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@foo,com') LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user_at_foo.org') LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('example.user@foo.') LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('foo@bar_baz.com') LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('foo@bar_baz.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "display_name", "email", "name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2014-11-19 19:45:46.184237"], ["display_name", "user"], ["email", "user@user.com"], ["name", "User"], ["password_digest", "$2a$04$P//en37df9opYqusF4atOOjDeT6k172Tq9L28FX.ZlvGyN1ZgBfAm"], ["updated_at", "2014-11-19 19:45:46.184237"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('USER@USER.COM') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:52:13.482216"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:52:13.482216"], ["zip_code", "90210"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#index as HTML
+  Rendered addresses/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+  [1m[35mAddress Load (0.6ms)[0m  SELECT "addresses".* FROM "addresses"
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:52:13.498462"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:52:13.498462"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#show as HTML
+  Parameters: {"id"=>"200"}
+  [1m[35mAddress Load (0.4ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 200]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by AddressesController#new as HTML
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:52:13.509426"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:52:13.509426"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#edit as HTML
+  Parameters: {"id"=>"201"}
+  [1m[35mAddress Load (0.2ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 201]]
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "addresses"[0m
+Processing by AddressesController#create as HTML
+  Parameters: {"address"=>{"street_name"=>"Bad Street", "street_number"=>"8000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:52:13.519460"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:52:13.519460"], ["zip_code", "90210"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/addresses/202
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "addresses"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by AddressesController#create as HTML
+  Parameters: {"address"=>{"street_name"=>"Bad Street", "street_number"=>"8000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:52:13.525193"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:52:13.525193"], ["zip_code", "90210"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/addresses/203
+Completed 302 Found in 2ms (ActiveRecord: 0.8ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by AddressesController#create as HTML
+  Parameters: {"address"=>{"street_name"=>"Bad Street", "street_number"=>"8000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:52:13.530980"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:52:13.530980"], ["zip_code", "90210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/addresses/204
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+  [1m[35mAddress Load (0.5ms)[0m  SELECT  "addresses".* FROM "addresses"   ORDER BY "addresses"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by AddressesController#create as HTML
+  Parameters: {"address"=>{"street_name"=>nil, "street_number"=>nil, "city"=>nil, "state"=>nil, "zip_code"=>nil}}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by AddressesController#create as HTML
+  Parameters: {"address"=>{"street_name"=>nil, "street_number"=>nil, "city"=>nil, "state"=>nil, "zip_code"=>nil}}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:52:13.554379"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:52:13.554379"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#update as HTML
+  Parameters: {"address"=>{"street_name"=>"Good Street", "street_number"=>"7000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}, "id"=>"205"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 205]]
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "addresses" SET "street_name" = $1, "street_number" = $2, "updated_at" = $3 WHERE "addresses"."id" = 205  [["street_name", "Good Street"], ["street_number", "7000"], ["updated_at", "2014-11-19 19:52:13.558435"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/addresses/205
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+  [1m[35mAddress Load (0.2ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 205]]
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:52:13.563561"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:52:13.563561"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#update as HTML
+  Parameters: {"address"=>{"street_name"=>"Bad Street", "street_number"=>"8000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}, "id"=>"206"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 206]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/addresses/206
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:52:13.569285"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:52:13.569285"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#update as HTML
+  Parameters: {"address"=>{"street_name"=>"Bad Street", "street_number"=>"8000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}, "id"=>"207"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 207]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/addresses/207
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:52:13.575506"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:52:13.575506"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#update as HTML
+  Parameters: {"address"=>{"street_name"=>nil, "street_number"=>nil, "city"=>nil, "state"=>nil, "zip_code"=>nil}, "id"=>"208"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 208]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:52:13.583945"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:52:13.583945"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#update as HTML
+  Parameters: {"address"=>{"street_name"=>nil, "street_number"=>nil, "city"=>nil, "state"=>nil, "zip_code"=>nil}, "id"=>"209"}
+  [1m[35mAddress Load (0.2ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 209]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:52:13.592551"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:52:13.592551"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "addresses"
+Processing by AddressesController#destroy as HTML
+  Parameters: {"id"=>"210"}
+  [1m[36mAddress Load (0.4ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1[0m  [["id", 210]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "addresses" WHERE "addresses"."id" = $1[0m  [["id", 210]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/addresses
+Completed 302 Found in 2ms (ActiveRecord: 0.9ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "addresses"[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:52:13.599545"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:52:13.599545"], ["zip_code", "90210"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:52:13.601058"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:52:13.601058"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/addresses.211%2F212" for 127.0.0.1 at 2014-11-19 12:52:13 -0700
+Processing by AddressesController#index as 
+  [1m[35mAddress Load (0.4ms)[0m  SELECT "addresses".* FROM "addresses"
+  Rendered layouts/_notices.html.erb (0.4ms)
+Completed 200 OK in 27ms (Views: 17.9ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:52:13.637770"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:52:13.637770"], ["zip_code", "90210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:52:13.639994"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:52:13.639994"], ["zip_code", "90210"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/addresses.213%2F214" for 127.0.0.1 at 2014-11-19 12:52:13 -0700
+Processing by AddressesController#index as 
+  [1m[36mAddress Load (0.4ms)[0m  [1mSELECT "addresses".* FROM "addresses"[0m
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-11-19 12:52:13 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered layouts/_notices.html.erb (0.3ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms)
+Started GET "/users/new" for 127.0.0.1 at 2014-11-19 12:52:13 -0700
+Processing by UsersController#new as HTML
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 1.6ms)
+Started POST "/users" for 127.0.0.1 at 2014-11-19 12:52:13 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"Name", "display_name"=>"", "email"=>"email@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('email@email.com') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "display_name", "email", "name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-11-19 19:52:13.696895"], ["display_name", ""], ["email", "email@email.com"], ["name", "Name"], ["password_digest", "$2a$04$O3MZbWLIarVyABWOKgR28eh3C.bd6RHOl03B54//nIkAL.3HKFZ2a"], ["updated_at", "2014-11-19 19:52:13.696895"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/login
+Completed 302 Found in 12ms (ActiveRecord: 1.8ms)
+Started GET "/login" for 127.0.0.1 at 2014-11-19 12:52:13 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-11-19 12:52:13 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-11-19 12:52:13 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-11-19 12:52:13 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered layouts/_notices.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('cave@aperturelabs.com') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-11-19 19:52:13.729791"], ["email", "cave@aperturelabs.com"], ["name", "Cave Johnson"], ["password_digest", "$2a$04$VNJvjrO1F6JWh.1Lz0uRiuZoshTlDt6gkR6NHBcEIhrzL9/P1Z7CO"], ["updated_at", "2014-11-19 19:52:13.729791"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2014-11-19 12:52:13 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2014-11-19 12:52:13 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"cave@aperturelabs.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'cave@aperturelabs.com' LIMIT 1
+Redirected to http://www.example.com/users
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+Started GET "/users" for 127.0.0.1 at 2014-11-19 12:52:13 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered layouts/_notices.html.erb (0.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 47]]
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mItem Exists (0.9ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'a' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "items" ("created_at", "description", "price", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-11-19 19:52:13.794326"], ["description", "aa"], ["price", "1.99"], ["title", "a"], ["updated_at", "2014-11-19 19:52:13.794326"]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2014-11-19 19:52:13.796195"], ["name", "lunch"], ["updated_at", "2014-11-19 19:52:13.796195"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "categories_items" ("category_id", "item_id") VALUES ($1, $2)[0m  [["category_id", 31], ["item_id", 31]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "items" INNER JOIN "categories_items" ON "items"."id" = "categories_items"."item_id" WHERE "categories_items"."category_id" = $1[0m  [["category_id", 31]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mItem Exists (0.4ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mItem Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mItem Exists (0.3ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mItem Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mItem Exists (0.3ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mItem Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = '' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mItem Exists (0.3ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mItem Exists (0.3ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("created_at", "description", "price", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-11-19 19:52:13.834599"], ["description", "legal stimulants for cheap"], ["price", "2.99"], ["title", "coffee"], ["updated_at", "2014-11-19 19:52:13.834599"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2014-11-19 19:52:13.835733"], ["name", "breakfast"], ["updated_at", "2014-11-19 19:52:13.835733"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "categories_items" ("category_id", "item_id") VALUES ($1, $2)[0m  [["category_id", 32], ["item_id", 32]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mItem Exists (0.2ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mItem Exists (0.3ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36mItem Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = 'espresso' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mItem Exists (0.6ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mItem Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@foo,com') LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user_at_foo.org') LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('example.user@foo.') LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('foo@bar_baz.com') LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('foo@bar_baz.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "display_name", "email", "name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-11-19 19:52:13.883672"], ["display_name", "user"], ["email", "user@user.com"], ["name", "User"], ["password_digest", "$2a$04$lvK.5xPt/nhpjEPPmv8YVu5TZiWw/3hby.ig05J.KHzD6bX.Vpedm"], ["updated_at", "2014-11-19 19:52:13.883672"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('USER@USER.COM') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:55:53.046106"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:55:53.046106"], ["zip_code", "90210"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#index as HTML
+  Rendered addresses/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+  [1m[35mAddress Load (0.7ms)[0m  SELECT "addresses".* FROM "addresses"
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:55:53.062285"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:55:53.062285"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#show as HTML
+  Parameters: {"id"=>"216"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 216]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+Processing by AddressesController#new as HTML
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:55:53.073359"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:55:53.073359"], ["zip_code", "90210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#edit as HTML
+  Parameters: {"id"=>"217"}
+  [1m[35mAddress Load (0.2ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 217]]
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "addresses"[0m
+Processing by AddressesController#create as HTML
+  Parameters: {"address"=>{"street_name"=>"Bad Street", "street_number"=>"8000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}}
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:55:53.083227"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:55:53.083227"], ["zip_code", "90210"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/addresses/218
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "addresses"[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by AddressesController#create as HTML
+  Parameters: {"address"=>{"street_name"=>"Bad Street", "street_number"=>"8000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:55:53.088908"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:55:53.088908"], ["zip_code", "90210"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/addresses/219
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by AddressesController#create as HTML
+  Parameters: {"address"=>{"street_name"=>"Bad Street", "street_number"=>"8000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:55:53.094597"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:55:53.094597"], ["zip_code", "90210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/addresses/220
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+  [1m[35mAddress Load (0.5ms)[0m  SELECT  "addresses".* FROM "addresses"   ORDER BY "addresses"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by AddressesController#create as HTML
+  Parameters: {"address"=>{"street_name"=>nil, "street_number"=>nil, "city"=>nil, "state"=>nil, "zip_code"=>nil}}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by AddressesController#create as HTML
+  Parameters: {"address"=>{"street_name"=>nil, "street_number"=>nil, "city"=>nil, "state"=>nil, "zip_code"=>nil}}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:55:53.118227"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:55:53.118227"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#update as HTML
+  Parameters: {"address"=>{"street_name"=>"Good Street", "street_number"=>"7000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}, "id"=>"221"}
+  [1m[35mAddress Load (0.5ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 221]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "addresses" SET "street_name" = $1, "street_number" = $2, "updated_at" = $3 WHERE "addresses"."id" = 221  [["street_name", "Good Street"], ["street_number", "7000"], ["updated_at", "2014-11-19 19:55:53.122172"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/addresses/221
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 221]]
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:55:53.126790"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:55:53.126790"], ["zip_code", "90210"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#update as HTML
+  Parameters: {"address"=>{"street_name"=>"Bad Street", "street_number"=>"8000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}, "id"=>"222"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 222]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/addresses/222
+Completed 302 Found in 2ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:55:53.133819"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:55:53.133819"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#update as HTML
+  Parameters: {"address"=>{"street_name"=>"Bad Street", "street_number"=>"8000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}, "id"=>"223"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 223]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/addresses/223
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:55:53.139938"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:55:53.139938"], ["zip_code", "90210"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#update as HTML
+  Parameters: {"address"=>{"street_name"=>nil, "street_number"=>nil, "city"=>nil, "state"=>nil, "zip_code"=>nil}, "id"=>"224"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 224]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:55:53.149106"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:55:53.149106"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#update as HTML
+  Parameters: {"address"=>{"street_name"=>nil, "street_number"=>nil, "city"=>nil, "state"=>nil, "zip_code"=>nil}, "id"=>"225"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 225]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:55:53.157551"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:55:53.157551"], ["zip_code", "90210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "addresses"
+Processing by AddressesController#destroy as HTML
+  Parameters: {"id"=>"226"}
+  [1m[36mAddress Load (0.3ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1[0m  [["id", 226]]
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "addresses" WHERE "addresses"."id" = $1[0m  [["id", 226]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/addresses
+Completed 302 Found in 2ms (ActiveRecord: 0.9ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "addresses"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:55:53.164232"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:55:53.164232"], ["zip_code", "90210"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:55:53.165531"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:55:53.165531"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/addresses.227%2F228" for 127.0.0.1 at 2014-11-19 12:55:53 -0700
+Processing by AddressesController#index as 
+  [1m[35mAddress Load (0.6ms)[0m  SELECT "addresses".* FROM "addresses"
+  Rendered layouts/_notices.html.erb (0.4ms)
+Completed 200 OK in 26ms (Views: 17.7ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:55:53.201999"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:55:53.201999"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:55:53.203694"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:55:53.203694"], ["zip_code", "90210"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/addresses.229%2F230" for 127.0.0.1 at 2014-11-19 12:55:53 -0700
+Processing by AddressesController#index as 
+  [1m[36mAddress Load (0.2ms)[0m  [1mSELECT "addresses".* FROM "addresses"[0m
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-11-19 12:55:53 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users"
+  Rendered layouts/_notices.html.erb (0.4ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.7ms)
+Started GET "/users/new" for 127.0.0.1 at 2014-11-19 12:55:53 -0700
+Processing by UsersController#new as HTML
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 13.2ms | ActiveRecord: 1.7ms)
+Started POST "/users" for 127.0.0.1 at 2014-11-19 12:55:53 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"Name", "display_name"=>"", "email"=>"email@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('email@email.com') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "display_name", "email", "name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-11-19 19:55:53.262766"], ["display_name", ""], ["email", "email@email.com"], ["name", "Name"], ["password_digest", "$2a$04$P71xFPKDzvQT6XEvBwwknuD2stGkCboudc6Vi1d/WiAxVIAI6aFBy"], ["updated_at", "2014-11-19 19:55:53.262766"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/login
+Completed 302 Found in 12ms (ActiveRecord: 1.7ms)
+Started GET "/login" for 127.0.0.1 at 2014-11-19 12:55:53 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-11-19 12:55:53 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-11-19 12:55:53 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-11-19 12:55:53 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered layouts/_notices.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('cave@aperturelabs.com') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-11-19 19:55:53.295598"], ["email", "cave@aperturelabs.com"], ["name", "Cave Johnson"], ["password_digest", "$2a$04$YRjSE8BuUsExp6Mwx47MV.3HLMmnq0yxD9ERhdeaPviHkH4utBzgi"], ["updated_at", "2014-11-19 19:55:53.295598"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2014-11-19 12:55:53 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2014-11-19 12:55:53 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"cave@aperturelabs.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'cave@aperturelabs.com' LIMIT 1
+Redirected to http://www.example.com/users
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+Started GET "/users" for 127.0.0.1 at 2014-11-19 12:55:53 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered layouts/_notices.html.erb (0.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 50]]
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mItem Exists (0.5ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'a' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "items" ("created_at", "description", "price", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-11-19 19:55:53.361354"], ["description", "aa"], ["price", "1.99"], ["title", "a"], ["updated_at", "2014-11-19 19:55:53.361354"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2014-11-19 19:55:53.362946"], ["name", "lunch"], ["updated_at", "2014-11-19 19:55:53.362946"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "categories_items" ("category_id", "item_id") VALUES ($1, $2)[0m  [["category_id", 33], ["item_id", 33]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "items" INNER JOIN "categories_items" ON "items"."id" = "categories_items"."item_id" WHERE "categories_items"."category_id" = $1[0m  [["category_id", 33]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mItem Exists (0.4ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mItem Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mItem Exists (0.3ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mItem Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mItem Exists (0.3ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mItem Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = '' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mItem Exists (0.4ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mItem Exists (0.3ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("created_at", "description", "price", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-11-19 19:55:53.401766"], ["description", "legal stimulants for cheap"], ["price", "2.99"], ["title", "coffee"], ["updated_at", "2014-11-19 19:55:53.401766"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2014-11-19 19:55:53.402821"], ["name", "breakfast"], ["updated_at", "2014-11-19 19:55:53.402821"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "categories_items" ("category_id", "item_id") VALUES ($1, $2)[0m  [["category_id", 34], ["item_id", 34]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mItem Exists (0.3ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mItem Exists (0.3ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36mItem Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = 'espresso' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mItem Exists (0.2ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mItem Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@foo,com') LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user_at_foo.org') LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('example.user@foo.') LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('foo@bar_baz.com') LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('foo@bar_baz.com') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "display_name", "email", "name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-11-19 19:55:53.449387"], ["display_name", "user"], ["email", "user@user.com"], ["name", "User"], ["password_digest", "$2a$04$zg/qVhE8QS2mMNK7UbKryOQQi6g101bqyvo5vVrRObufnkD0DKTHm"], ["updated_at", "2014-11-19 19:55:53.449387"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('USER@USER.COM') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:56:30.362511"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:56:30.362511"], ["zip_code", "90210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#index as HTML
+  Rendered addresses/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+  [1m[35mAddress Load (0.6ms)[0m  SELECT "addresses".* FROM "addresses"
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:56:30.378607"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:56:30.378607"], ["zip_code", "90210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#show as HTML
+  Parameters: {"id"=>"232"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 232]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by AddressesController#new as HTML
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:56:30.390721"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:56:30.390721"], ["zip_code", "90210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#edit as HTML
+  Parameters: {"id"=>"233"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 233]]
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "addresses"[0m
+Processing by AddressesController#create as HTML
+  Parameters: {"address"=>{"street_name"=>"Bad Street", "street_number"=>"8000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:56:30.400205"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:56:30.400205"], ["zip_code", "90210"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/addresses/234
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "addresses"[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by AddressesController#create as HTML
+  Parameters: {"address"=>{"street_name"=>"Bad Street", "street_number"=>"8000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}}
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:56:30.406148"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:56:30.406148"], ["zip_code", "90210"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/addresses/235
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by AddressesController#create as HTML
+  Parameters: {"address"=>{"street_name"=>"Bad Street", "street_number"=>"8000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}}
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:56:30.413104"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:56:30.413104"], ["zip_code", "90210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/addresses/236
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"   ORDER BY "addresses"."id" DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by AddressesController#create as HTML
+  Parameters: {"address"=>{"street_name"=>nil, "street_number"=>nil, "city"=>nil, "state"=>nil, "zip_code"=>nil}}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by AddressesController#create as HTML
+  Parameters: {"address"=>{"street_name"=>nil, "street_number"=>nil, "city"=>nil, "state"=>nil, "zip_code"=>nil}}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:56:30.435537"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:56:30.435537"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#update as HTML
+  Parameters: {"address"=>{"street_name"=>"Good Street", "street_number"=>"7000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}, "id"=>"237"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 237]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "addresses" SET "street_name" = $1, "street_number" = $2, "updated_at" = $3 WHERE "addresses"."id" = 237  [["street_name", "Good Street"], ["street_number", "7000"], ["updated_at", "2014-11-19 19:56:30.439316"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/addresses/237
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 237]]
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:56:30.444142"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:56:30.444142"], ["zip_code", "90210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#update as HTML
+  Parameters: {"address"=>{"street_name"=>"Bad Street", "street_number"=>"8000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}, "id"=>"238"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 238]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/addresses/238
+Completed 302 Found in 2ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:56:30.449870"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:56:30.449870"], ["zip_code", "90210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#update as HTML
+  Parameters: {"address"=>{"street_name"=>"Bad Street", "street_number"=>"8000", "city"=>"Beverly Hills", "state"=>"CA", "zip_code"=>"90210"}, "id"=>"239"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 239]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/addresses/239
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:56:30.456075"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:56:30.456075"], ["zip_code", "90210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#update as HTML
+  Parameters: {"address"=>{"street_name"=>nil, "street_number"=>nil, "city"=>nil, "state"=>nil, "zip_code"=>nil}, "id"=>"240"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 240]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:56:30.464649"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:56:30.464649"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AddressesController#update as HTML
+  Parameters: {"address"=>{"street_name"=>nil, "street_number"=>nil, "city"=>nil, "state"=>nil, "zip_code"=>nil}, "id"=>"241"}
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 241]]
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:56:30.473211"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:56:30.473211"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "addresses"
+Processing by AddressesController#destroy as HTML
+  Parameters: {"id"=>"242"}
+  [1m[36mAddress Load (0.3ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1[0m  [["id", 242]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "addresses" WHERE "addresses"."id" = $1[0m  [["id", 242]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/addresses
+Completed 302 Found in 2ms (ActiveRecord: 0.8ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "addresses"[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:56:30.479635"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:56:30.479635"], ["zip_code", "90210"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:56:30.480991"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:56:30.480991"], ["zip_code", "90210"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/addresses.243%2F244" for 127.0.0.1 at 2014-11-19 12:56:30 -0700
+Processing by AddressesController#index as 
+  [1m[35mAddress Load (0.4ms)[0m  SELECT "addresses".* FROM "addresses"
+  Rendered layouts/_notices.html.erb (0.4ms)
+Completed 200 OK in 26ms (Views: 17.9ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:56:30.517371"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:56:30.517371"], ["zip_code", "90210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Beverly Hills"], ["created_at", "2014-11-19 19:56:30.519199"], ["state", "CA"], ["street_name", "Bad Street"], ["street_number", "8000"], ["updated_at", "2014-11-19 19:56:30.519199"], ["zip_code", "90210"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/addresses.245%2F246" for 127.0.0.1 at 2014-11-19 12:56:30 -0700
+Processing by AddressesController#index as 
+  [1m[36mAddress Load (0.4ms)[0m  [1mSELECT "addresses".* FROM "addresses"[0m
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-11-19 12:56:30 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered layouts/_notices.html.erb (0.4ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms)
+Started GET "/users/new" for 127.0.0.1 at 2014-11-19 12:56:30 -0700
+Processing by UsersController#new as HTML
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 1.6ms)
+Started POST "/users" for 127.0.0.1 at 2014-11-19 12:56:30 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"name"=>"Name", "display_name"=>"", "email"=>"email@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('email@email.com') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "display_name", "email", "name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-11-19 19:56:30.581025"], ["display_name", ""], ["email", "email@email.com"], ["name", "Name"], ["password_digest", "$2a$04$.HxNHoDlIn/hngL3oCFxR.ly9oBeGjsv9gYExxNG7sl/aQi.lPgUW"], ["updated_at", "2014-11-19 19:56:30.581025"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/login
+Completed 302 Found in 14ms (ActiveRecord: 1.5ms)
+Started GET "/login" for 127.0.0.1 at 2014-11-19 12:56:30 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-11-19 12:56:30 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2014-11-19 12:56:30 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-11-19 12:56:30 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('cave@aperturelabs.com') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-11-19 19:56:30.613711"], ["email", "cave@aperturelabs.com"], ["name", "Cave Johnson"], ["password_digest", "$2a$04$eAoKkgLYhx9JfD1dT43fBOa3bRAa/t5dVYwa78EINqC0Qdk/srmCG"], ["updated_at", "2014-11-19 19:56:30.613711"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2014-11-19 12:56:30 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_notices.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2014-11-19 12:56:30 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"cave@aperturelabs.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'cave@aperturelabs.com' LIMIT 1
+Redirected to http://www.example.com/users
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+Started GET "/users" for 127.0.0.1 at 2014-11-19 12:56:30 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered layouts/_notices.html.erb (0.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 53]]
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mItem Exists (0.4ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'a' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("created_at", "description", "price", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-11-19 19:56:30.677114"], ["description", "aa"], ["price", "1.99"], ["title", "a"], ["updated_at", "2014-11-19 19:56:30.677114"]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2014-11-19 19:56:30.678992"], ["name", "lunch"], ["updated_at", "2014-11-19 19:56:30.678992"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "categories_items" ("category_id", "item_id") VALUES ($1, $2)[0m  [["category_id", 35], ["item_id", 35]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "items" INNER JOIN "categories_items" ON "items"."id" = "categories_items"."item_id" WHERE "categories_items"."category_id" = $1[0m  [["category_id", 35]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mItem Exists (0.4ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mItem Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mItem Exists (0.4ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mItem Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mItem Exists (0.3ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mItem Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = '' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mItem Exists (0.3ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mItem Exists (0.2ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("created_at", "description", "price", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-11-19 19:56:30.718726"], ["description", "legal stimulants for cheap"], ["price", "2.99"], ["title", "coffee"], ["updated_at", "2014-11-19 19:56:30.718726"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2014-11-19 19:56:30.719848"], ["name", "breakfast"], ["updated_at", "2014-11-19 19:56:30.719848"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "categories_items" ("category_id", "item_id") VALUES ($1, $2)[0m  [["category_id", 36], ["item_id", 36]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mItem Exists (0.4ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mItem Exists (0.3ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36mItem Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = 'espresso' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mItem Exists (0.5ms)[0m  SELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mItem Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "items"  WHERE "items"."title" = 'coffee' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@foo,com') LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user_at_foo.org') LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('example.user@foo.') LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('foo@bar_baz.com') LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('foo@bar_baz.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "display_name", "email", "name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2014-11-19 19:56:30.768177"], ["display_name", "user"], ["email", "user@user.com"], ["name", "User"], ["password_digest", "$2a$04$LlT1zIjoY5nX/hjURxU4BeucfKqKUjmBO2K9v3vgxcEV5bxX2zJO6"], ["updated_at", "2014-11-19 19:56:30.768177"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('USER@USER.COM') LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE LOWER("users"."email") = LOWER('user@user.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
