@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
     if user
       session[:user_id] = user.id
-      redirect_to users_path, notice: "Welcome to Dinner Dash, #{user.name}."
+      redirect_to user_path(user), notice: "Welcome to EspressGo, #{user.name}."
     else
       redirect_to login_path, notice: 'We could not log you in. Please try again.'
     end
