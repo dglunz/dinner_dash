@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :items
 
-  resources :users, only: [:new, :create, :index]
+  resources :users
 
   get    '/login',  to: "sessions#new"
   post   '/login',  to: "sessions#create"
