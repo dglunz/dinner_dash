@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :require_admin, only: [:edit, :new, :create, :destroy]
 
   def index
     @items = Item.all
@@ -17,8 +18,12 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.save
-    redirect_to items_url
+    if @item.save
+      redirect_to items_url, notice: 'Item successfully created!'
+    else
+      flash.now[:notice] = 'Item could not be created, try again.'
+      render :new
+    end
   end
 
   private
