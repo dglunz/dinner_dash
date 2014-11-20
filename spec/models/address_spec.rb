@@ -3,8 +3,7 @@ require 'rails_helper'
 RSpec.describe Address, :type => :model do
   let(:address) do
     Address.new(street_name: "Death Street", street_number: "8000",
-                city: "Beverly Hills", state: "CA", zip_code: "90210",
-                order_id: 1)
+                city: "Beverly Hills", state: "CA", zip_code: "90210")
   end
 
   it 'is valid' do 
