@@ -9,22 +9,35 @@ describe 'Application authorization', type: :feature do
       visit root_path
     end
 
-    xit 'cannot access a restricted page' do
-      visit edit_user_path
+    it 'cannot access a restricted page' do
+      user = FactoryGirl.create(:user)
+      visit users_path
       expect(page).to have_content('Not authorized.')
     end
   end
 
   context 'when logged in as a user' do
 
-    xit 'can see profile details' do
-
+    it 'can see profile details' do
+      user = FactoryGirl.create(:user)
+      visit login_path
+      fill_in 'Email', with: user.email
+      fill_in 'Password', with: user.password
+      click_button 'Login'
+      visit user_path(user.id)
+      expect(page).to have_content(user.name)
     end
   end
 
   context 'when logged in as an admin' do
-    xit 'can access the admin page' do
-
+    it 'can access the users index page' do
+      user = FactoryGirl.create(:admin)
+      visit login_path
+      fill_in 'Email', with: user.email
+      fill_in 'Password', with: user.password
+      click_button 'Login'
+      visit users_path
+      expect(page).to have_content('All users')
     end
   end
 end
