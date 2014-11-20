@@ -1,5 +1,5 @@
 class Address < ActiveRecord::Base
-  belongs_to :order
+  has_and_belongs_to_many :orders
 
   validates :street_name, presence: true
   validates :street_number, presence: true
