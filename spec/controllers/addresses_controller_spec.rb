@@ -3,12 +3,12 @@ require 'rails_helper'
 RSpec.describe AddressesController, :type => :controller do
   let(:valid_attributes) {
     { street_name: "Bad Street", street_number: "8000", city: "Beverly Hills",
-     state: "CA", zip_code: "90210" }
+     state: "CA", zip_code: "90210", order_id: 1 }
   }
 
   let(:invalid_attributes) {
     { street_name: nil, street_number: nil, city: nil,
-     state: nil, zip_code: nil }
+     state: nil, zip_code: nil, order_id: nil }
   }
 
   let(:valid_session) { {} }
@@ -81,7 +81,7 @@ RSpec.describe AddressesController, :type => :controller do
     describe "with valid params" do 
       let(:new_attributes) {
         { street_name: "Good Street", street_number: "7000", city: "Beverly Hills",
-         state: "CA", zip_code: "90210" }
+         state: "CA", zip_code: "90210", order_id: 5 }
       }
 
       it "updates the requested address" do 

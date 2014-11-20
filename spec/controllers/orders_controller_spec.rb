@@ -1,32 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe OrdersController, :type => :controller do
+  let(:valid_attributes) {
+    { delivery: true }
+  }
 
-  describe "GET index" do
-    xit "returns http success" do
-      get :index
-      expect(response).to have_http_status(:success)
-    end
-  end
+  let(:invalid_attributes) {
+    { delivery: nil }
+  }
 
-  describe "GET show" do
-    xit "returns http success" do
-      get :show
-      expect(response).to have_http_status(:success)
-    end
-  end
+  let(:valid_session) { {} }
 
-  describe "GET new" do
-    xit "returns http success" do
-      get :new
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET edit" do
-    xit "returns http success" do
-      get :edit
-      expect(response).to have_http_status(:success)
+  describe "GET index" do 
+    it "assigns all orders as @orders" do 
+      order = Order.create! valid_attributes
+      get :index, {}, valid_session
+      expect(assigns(:orders)).to eq([order])
     end
   end
 
