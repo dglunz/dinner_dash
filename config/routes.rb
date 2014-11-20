@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  get 'orders/index'
-
-  get 'orders/show'
-
-  get 'orders/new'
-
-  get 'orders/edit'
+  resources :orders
 
   resources :addresses
 
