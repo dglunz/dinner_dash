@@ -6,5 +6,5 @@ class Address < ActiveRecord::Base
   validates :city, presence: true
   validates :state, presence: true
   validates :zip_code, presence: true
-  # validates :order_id, presence: true
+  validates :order_id, presence: true
 end
