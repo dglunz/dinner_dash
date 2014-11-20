@@ -81,7 +81,7 @@ RSpec.describe AddressesController, :type => :controller do
     describe "with valid params" do 
       let(:new_attributes) {
         { street_name: "Good Street", street_number: "7000", city: "Beverly Hills",
-         state: "CA", zip_code: "90210" }
+         state: "CA", zip_code: "90210", order_id: 5 }
       }
 
       it "updates the requested address" do 
