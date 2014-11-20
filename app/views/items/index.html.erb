@@ -1,9 +1,11 @@
 <h1>All Items</h1>
 <% @items.each do |item| %>
-  <div class='item'>
-    <%= item.title %>
-    <%= item.description %>
-    <%= item.price %>
-    <%= image_tag item.photo.url %>
+  <div class='panel panel-default'>
+    <div class='panel-heading'><h3 class='panel-title'><%= link_to item.title, item %></h3></div>
+    <div class='panel-body'>
+      <%= item.description %>
+      <%= item.price %>
+      <%= image_tag item.photo.url %>
+    </div>
   </div>
 <% end %>
