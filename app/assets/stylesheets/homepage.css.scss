@@ -1,6 +1,17 @@
+@font-face {
+  font-family: 'Channel';
+  src: url('/assets/Channel.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GeoSans';
+  src: url('/assets/GeosansLight.ttf') format('truetype');
+}
+
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  font-family: 'GeoSans';
 }
 
 .header,
@@ -8,6 +19,11 @@ body {
 .footer {
   padding-right: 15px;
   padding-left: 15px;
+}
+
+a {
+  color: #493736;
+  font-size: 18px;
 }
 
 .header {
@@ -25,11 +41,6 @@ body {
   border-top: 1px solid #e5e5e5;
 }
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-}
 .container-narrow > hr {
   margin: 30px 0;
 }
@@ -37,6 +48,7 @@ body {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+  font-family: 'GeoSans';
 }
 .jumbotron .btn {
   padding: 14px 24px;
@@ -66,9 +78,21 @@ body {
 }
 
 #logo {
-  color: #5A2E2E;
-}
+  color: #7B3B3B;
+  font-family: 'Channel';
+ }
 
 #logo:hover {
   text-decoration: none;
 }
+
+.btn-success:hover {
+  background-color: #B9D7D9;
+  border-color: #A6C1C3;
+}
+
+.btn-success {
+  background-color: #668284;
+  border-color: #5b7576;
+}
+
