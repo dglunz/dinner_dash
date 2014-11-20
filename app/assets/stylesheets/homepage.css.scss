@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Channel';
-  src: url('/assets/Channel.ttf') format('truetype');
+  src: font-url('Channel.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'GeoSans';
-  src: url('/assets/GeosansLight.ttf') format('truetype');
+  src: font-url('GeosansLight.ttf') format('truetype');
 }
 
 body {

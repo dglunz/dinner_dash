@@ -1,3 +1,5 @@
-db/schema.rb
-log/*
-tmp/*
+/db/schema.rb
+/log/*
+/tmp/*
+/spec/tmp/*
+
