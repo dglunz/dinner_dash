@@ -1,8 +1,8 @@
 <div class="header">
   <nav>
     <ul class="nav nav-pills pull-right">
-      <li role="presentation"><a href="#">Home</a></li>
-      <li role="presentation"><a href="#">About</a></li>
+      <li role="presentation"><%=link_to 'Home', root_path %></li>
+      <li role="presentation"><%=link_to 'About', '/about' %></li>
         <% if current_user %>
           <li role="presentation"><%= link_to 'Logout', logout_path, id: 'logout', method: 'delete' %></li>
         <% else %>
@@ -11,7 +11,7 @@
         <% end %>
     </ul>
   </nav>
-  <h3 class="text-muted">EspressGo</h3>
+  <h3 class="text-muted"><%= link_to 'EspressGo', root_path, id: 'logo' %></h3>
 </div>
 
 
