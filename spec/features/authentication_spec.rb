@@ -33,7 +33,7 @@ describe 'Application authentication', type: :feature do
     end
   end
 
-  context 'when logged in' do
+  context 'when logging in' do
 
     it 'logs in an existing user' do
       user = FactoryGirl.create(:user)
