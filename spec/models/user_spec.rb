@@ -73,4 +73,13 @@ RSpec.describe User, type: :model do
   it 'is not an admin by default' do
     expect(user.admin).to be false
   end
+
+  it 'responds to #is_admin?' do
+    expect(user).to respond_to(:is_admin?)
+  end
+
+  it 'can make a user an admin' do
+    user.admin = true
+    expect(user.is_admin?).to be true
+  end
 end
