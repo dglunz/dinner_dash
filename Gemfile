@@ -42,6 +42,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'selenium-webdriver', '~> 2.44.0'
+  gem 'launchy'
+  gem 'pry'
 end
 
 group :production do
