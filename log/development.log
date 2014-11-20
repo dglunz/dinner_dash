@@ -667,3 +667,398 @@ Processing by AddressesController#index as HTML
   Rendered layouts/_notices.html.erb (0.1ms)
   Rendered layouts/_header.html.erb (0.2ms)
 Completed 200 OK in 43ms (Views: 41.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/addresses/new" for 127.0.0.1 at 2014-11-20 08:38:58 -0700
+Processing by AddressesController#new as HTML
+  Rendered addresses/_form.html.erb (2.3ms)
+  Rendered addresses/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_notices.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 41.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/addresses" for 127.0.0.1 at 2014-11-20 08:39:11 -0700
+Processing by AddressesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/SZiLEDbPa71+tlM2TRYUsHkt+sjETa2ArRSixA/b/s=", "address"=>{"street_name"=>"Blah", "street_number"=>"9000", "city"=>"blah", "state"=>"blah", "zip_code"=>"9000"}, "commit"=>"Create Address"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "blah"], ["created_at", "2014-11-20 15:39:11.366409"], ["state", "blah"], ["street_name", "Blah"], ["street_number", "9000"], ["updated_at", "2014-11-20 15:39:11.366409"], ["zip_code", "9000"]]
+  [1m[35m (17.3ms)[0m  COMMIT
+Redirected to http://0.0.0.0:8080/addresses/4
+Completed 302 Found in 21ms (ActiveRecord: 17.9ms)
+
+
+Started GET "/addresses/4" for 127.0.0.1 at 2014-11-20 08:39:11 -0700
+Processing by AddressesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAddress Load (0.3ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered addresses/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_notices.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/address.css?body=1" for 127.0.0.1 at 2014-11-20 08:39:11 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 08:39:11 -0700
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-20 08:39:11 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 08:39:11 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 08:39:11 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 08:39:11 -0700
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-11-20 08:39:11 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-20 08:39:11 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 08:39:11 -0700
+
+
+Started GET "/addresses" for 127.0.0.1 at 2014-11-20 08:39:22 -0700
+Processing by AddressesController#index as HTML
+  [1m[35mAddress Load (0.5ms)[0m  SELECT "addresses".* FROM "addresses"
+  Rendered addresses/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_notices.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 40.5ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/addresses/4" for 127.0.0.1 at 2014-11-20 08:43:11 -0700
+Processing by AddressesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/SZiLEDbPa71+tlM2TRYUsHkt+sjETa2ArRSixA/b/s=", "id"=>"4"}
+  [1m[36mAddress Load (0.2ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "addresses" WHERE "addresses"."id" = $1[0m  [["id", 4]]
+  [1m[35m (1.4ms)[0m  COMMIT
+Redirected to http://0.0.0.0:8080/addresses
+Completed 302 Found in 4ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/addresses" for 127.0.0.1 at 2014-11-20 08:43:11 -0700
+Processing by AddressesController#index as HTML
+  [1m[36mAddress Load (0.6ms)[0m  [1mSELECT "addresses".* FROM "addresses"[0m
+  Rendered addresses/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_notices.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (4.9ms)
+Completed 200 OK in 47ms (Views: 45.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/addresses/new" for 127.0.0.1 at 2014-11-20 08:44:03 -0700
+Processing by AddressesController#new as HTML
+  Rendered addresses/_form.html.erb (2.4ms)
+  Rendered addresses/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_notices.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/addresses" for 127.0.0.1 at 2014-11-20 08:44:18 -0700
+Processing by AddressesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/SZiLEDbPa71+tlM2TRYUsHkt+sjETa2ArRSixA/b/s=", "address"=>{"street_name"=>"jfkadsjak", "street_number"=>"9000", "city"=>"philad", "state"=>"paidij", "zip_code"=>"9000"}, "commit"=>"Create Address"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "philad"], ["created_at", "2014-11-20 15:44:18.184016"], ["state", "paidij"], ["street_name", "jfkadsjak"], ["street_number", "9000"], ["updated_at", "2014-11-20 15:44:18.184016"], ["zip_code", "9000"]]
+  [1m[35m (5.0ms)[0m  COMMIT
+Redirected to http://0.0.0.0:8080/addresses/5
+Completed 302 Found in 8ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/addresses/5" for 127.0.0.1 at 2014-11-20 08:44:18 -0700
+Processing by AddressesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAddress Load (0.3ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered addresses/show.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_notices.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 40.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/addresses" for 127.0.0.1 at 2014-11-20 08:44:22 -0700
+Processing by AddressesController#index as HTML
+  [1m[35mAddress Load (0.3ms)[0m  SELECT "addresses".* FROM "addresses"
+  Rendered addresses/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_notices.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/addresses/5" for 127.0.0.1 at 2014-11-20 08:44:30 -0700
+Processing by AddressesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/SZiLEDbPa71+tlM2TRYUsHkt+sjETa2ArRSixA/b/s=", "id"=>"5"}
+  [1m[36mAddress Load (0.2ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "addresses" WHERE "addresses"."id" = $1[0m  [["id", 5]]
+  [1m[35m (1.4ms)[0m  COMMIT
+Redirected to http://0.0.0.0:8080/addresses
+Completed 302 Found in 4ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/addresses" for 127.0.0.1 at 2014-11-20 08:44:30 -0700
+Processing by AddressesController#index as HTML
+  [1m[36mAddress Load (0.5ms)[0m  [1mSELECT "addresses".* FROM "addresses"[0m
+  Rendered addresses/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_notices.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/addresses/new" for 127.0.0.1 at 2014-11-20 09:08:55 -0700
+Processing by AddressesController#new as HTML
+  Rendered addresses/_form.html.erb (2.7ms)
+  Rendered addresses/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_notices.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 47ms (Views: 46.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/addresses" for 127.0.0.1 at 2014-11-20 09:09:08 -0700
+Processing by AddressesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r7X94/sbDydAFrflWcqcptKtXm9qbYauDNEtJbx7XKU=", "address"=>{"street_name"=>"street", "street_number"=>"9000", "city"=>"jfakjd", "state"=>"pa", "zip_code"=>"90000"}, "commit"=>"Create Address"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "jfakjd"], ["created_at", "2014-11-20 16:09:08.697661"], ["state", "pa"], ["street_name", "street"], ["street_number", "9000"], ["updated_at", "2014-11-20 16:09:08.697661"], ["zip_code", "90000"]]
+  [1m[35m (19.0ms)[0m  COMMIT
+Redirected to http://0.0.0.0:8080/addresses/6
+Completed 302 Found in 22ms (ActiveRecord: 19.3ms)
+
+
+Started GET "/addresses/6" for 127.0.0.1 at 2014-11-20 09:09:08 -0700
+Processing by AddressesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAddress Load (0.3ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered addresses/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_notices.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 40.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/address.css?body=1" for 127.0.0.1 at 2014-11-20 09:09:08 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 09:09:08 -0700
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-20 09:09:08 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 09:09:08 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 09:09:08 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 09:09:08 -0700
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-11-20 09:09:08 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-20 09:09:08 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 09:09:08 -0700
+
+
+Started GET "/addresses" for 127.0.0.1 at 2014-11-20 09:09:10 -0700
+Processing by AddressesController#index as HTML
+  [1m[35mAddress Load (0.5ms)[0m  SELECT "addresses".* FROM "addresses"
+  Rendered addresses/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_notices.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 49ms (Views: 47.7ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/addresses/6" for 127.0.0.1 at 2014-11-20 09:09:15 -0700
+Processing by AddressesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"r7X94/sbDydAFrflWcqcptKtXm9qbYauDNEtJbx7XKU=", "id"=>"6"}
+  [1m[36mAddress Load (0.3ms)[0m  [1mSELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "addresses" WHERE "addresses"."id" = $1[0m  [["id", 6]]
+  [1m[35m (1.5ms)[0m  COMMIT
+Redirected to http://0.0.0.0:8080/addresses
+Completed 302 Found in 4ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/addresses" for 127.0.0.1 at 2014-11-20 09:09:15 -0700
+Processing by AddressesController#index as HTML
+  [1m[36mAddress Load (0.3ms)[0m  [1mSELECT "addresses".* FROM "addresses"[0m
+  Rendered addresses/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_notices.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 41.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/addresses" for 127.0.0.1 at 2014-11-20 09:20:53 -0700
+Processing by AddressesController#index as HTML
+  [1m[35mAddress Load (0.4ms)[0m  SELECT "addresses".* FROM "addresses"
+  Rendered addresses/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_notices.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 50ms (Views: 48.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/address.css?body=1" for 127.0.0.1 at 2014-11-20 09:20:53 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 09:20:53 -0700
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-20 09:20:53 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 09:20:53 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 09:20:53 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 09:20:53 -0700
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-11-20 09:20:53 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-20 09:20:53 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 09:20:53 -0700
+
+
+Started GET "/addresses/new" for 127.0.0.1 at 2014-11-20 09:20:54 -0700
+Processing by AddressesController#new as HTML
+  Rendered addresses/_form.html.erb (2.4ms)
+  Rendered addresses/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_notices.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 41.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/addresses" for 127.0.0.1 at 2014-11-20 09:21:10 -0700
+Processing by AddressesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r7X94/sbDydAFrflWcqcptKtXm9qbYauDNEtJbx7XKU=", "address"=>{"street_name"=>"dog", "street_number"=>"123", "city"=>"Dogville", "state"=>"Doglorado", "zip_code"=>"123456"}, "commit"=>"Create Address"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "addresses" ("city", "created_at", "state", "street_name", "street_number", "updated_at", "zip_code") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["city", "Dogville"], ["created_at", "2014-11-20 16:21:10.199296"], ["state", "Doglorado"], ["street_name", "dog"], ["street_number", "123"], ["updated_at", "2014-11-20 16:21:10.199296"], ["zip_code", "123456"]]
+  [1m[36m (5.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://0.0.0.0:8080/addresses/7
+Completed 302 Found in 9ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/addresses/7" for 127.0.0.1 at 2014-11-20 09:21:10 -0700
+Processing by AddressesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mAddress Load (0.2ms)[0m  SELECT  "addresses".* FROM "addresses"  WHERE "addresses"."id" = $1 LIMIT 1  [["id", 7]]
+  Rendered addresses/show.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_notices.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 39.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/address.css?body=1" for 127.0.0.1 at 2014-11-20 09:21:10 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 09:21:10 -0700
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-20 09:21:10 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 09:21:10 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 09:21:10 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 09:21:10 -0700
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-11-20 09:21:10 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-20 09:21:10 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 09:21:10 -0700
+
+
+Started GET "/addresses" for 127.0.0.1 at 2014-11-20 09:21:13 -0700
+Processing by AddressesController#index as HTML
+  [1m[36mAddress Load (0.4ms)[0m  [1mSELECT "addresses".* FROM "addresses"[0m
+  Rendered addresses/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_notices.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 47ms (Views: 45.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/address.css?body=1" for 127.0.0.1 at 2014-11-20 09:21:18 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 09:21:18 -0700
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-20 09:21:18 -0700
+
+
+Started GET "/addresses" for 127.0.0.1 at 2014-11-20 09:21:45 -0700
+Processing by AddressesController#index as HTML
+  Rendered addresses/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 3ms
+
+SyntaxError (/Users/adamsmith/Desktop/dinner_dash/app/views/addresses/index.html.erb:24: syntax error, unexpected ','
+...y", address, method: :delete, , id: "delete", data: { confir...
+...                               ^
+/Users/adamsmith/Desktop/dinner_dash/app/views/addresses/index.html.erb:24: syntax error, unexpected ',', expecting ')'
+...ethod: :delete, , id: "delete", data: { confirm: "Are you su...
+...                               ^):
+  app/views/addresses/index.html.erb:24: syntax error, unexpected ','
+  app/views/addresses/index.html.erb:24: syntax error, unexpected ',', expecting ')'
+
+
+  Rendered /Users/adamsmith/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/adamsmith/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/adamsmith/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/adamsmith/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.5ms)
+
+
+Started GET "/addresses" for 127.0.0.1 at 2014-11-20 09:21:52 -0700
+Processing by AddressesController#index as HTML
+  [1m[35mAddress Load (0.6ms)[0m  SELECT "addresses".* FROM "addresses"
+  Rendered addresses/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_notices.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+Completed 200 OK in 44ms (Views: 42.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/address.css?body=1" for 127.0.0.1 at 2014-11-20 09:21:52 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 09:21:52 -0700
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-20 09:21:52 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 09:21:52 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 09:21:52 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 09:21:52 -0700
+
+
+Started GET "/assets/address.js?body=1" for 127.0.0.1 at 2014-11-20 09:21:52 -0700
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-20 09:21:52 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 09:21:52 -0700

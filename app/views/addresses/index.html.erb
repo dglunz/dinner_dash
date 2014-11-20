@@ -21,7 +21,7 @@
         <td><%= address.zip_code %></td>
         <td><%= link_to "Show", address %></td>
         <td><%= link_to "Edit", edit_address_path(address) %></td>
-        <td><%= link_to "Destroy", address, method: :delete, data: { confirm: "Are you sure?" } %></td>
+        <td><%= link_to "Destroy", address, method: :delete, id: "delete", data: { confirm: "Are you sure?"} %></td>
       </tr>
     <% end %>
   </tbody>

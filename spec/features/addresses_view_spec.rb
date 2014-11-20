@@ -58,16 +58,18 @@ describe 'the addresses view', type: :feature do
 
   it "deletes an address" do 
     page.click_link("New Address")
-    page.fill_in("Street name", with: "Stupid Street")
+    page.fill_in("Street name", with: "Happy Street")
     page.fill_in("Street number", with: "1000")
     page.fill_in("City", with: "Philadelphia")
     page.fill_in("State", with: "PA")
     page.fill_in("Zip code", with: "19089")
     page.click_button("Create Address")
+    expect(page).to have_content("19089")
 
-    first(:link, "Destroy").click
-    expect(current_path).to eq(address_path(address))
-    expect(page).to_not have_content("Stupid Street")
+    click_on("Back")
+    all("#delete").last.click
+    expect(current_path).to eq(addresses_path)
+    expect(page).to_not have_content("Happy Street")
   end
 
 
