@@ -35,4 +35,9 @@ RSpec.describe Address, :type => :model do
     address.zip_code = nil
     expect(address).not_to be_valid
   end
+
+  it 'is invalid without an order id' do 
+    address.order_id = nil
+    expect(address).not_to be_valid
+  end
 end
