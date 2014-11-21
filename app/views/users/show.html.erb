@@ -1,1 +1,20 @@
 <h1>Welcome, <%= @user.name %></h1>
+
+<h2>Your addresses</h2>
+
+<ul>
+  <% @user.addresses.each do |address| %>
+    <li><%= address.street_name %></li>
+    <li><%= address.street_number %></li>
+    <li><%= address.city %></li>
+    <li><%= address.state %></li>
+    <li><%= address.zip_code %></li>
+    <%= link_to('Edit', edit_address_path(address)) %>
+    <%= link_to('Place order to this address', new_order_path(address_id: address.id)) %>
+    <% end %>
+</ul>
+
+
+<%= link_to 'Add address', new_address_path(user_id: @user.id) %> |
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
