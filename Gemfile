@@ -45,6 +45,8 @@ group :development, :test do
   gem 'selenium-webdriver', '~> 2.44.0'
   gem 'launchy'
   gem 'pry'
+  gem 'fabrication'
+  gem 'faker'
 end
 
 group :production do
