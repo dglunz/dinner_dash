@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Order, :type => :model do
   let(:order) do 
-    Order.new(delivery: true)
+    Order.new(delivery: true, pending: false)
   end
 
   it 'is valid' do 
@@ -11,6 +11,11 @@ RSpec.describe Order, :type => :model do
 
   it 'is invalid without a delivery status' do 
     order.delivery = nil
+    expect(order).to_not be_valid
+  end
+
+  it 's invalid without pending status' do 
+    order.pending = nil
     expect(order).to_not be_valid
   end
 
