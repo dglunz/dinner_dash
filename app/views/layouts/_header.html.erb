@@ -11,7 +11,7 @@
       <% end %>
       <li role="presentation"><a href='<%= cart_items_path %>'>
         <span class='glyphicon glyphicon-shopping-cart'></span>
-        <span class="badge">42</span>
+        <span class="badge"><%= @cart.count_total %></span>
       </a></li>
     </ul>
   </nav>
