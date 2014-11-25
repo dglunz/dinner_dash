@@ -1,0 +1,10 @@
+<div class='panel panel-default'>
+  <div class='panel-heading'>
+    <h3 class='panel-title'><%= link_to item.title, item %><span class='item-price'>$<%= item.price %></span></h3>
+  </div>
+  <div class='panel-body'>
+    <p><%= item.description %></p>
+    <p><%= image_tag item.photo.url, class: "img-responsive" %></p>
+  </div>
+</div>
+

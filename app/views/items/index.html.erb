@@ -2,32 +2,12 @@
 
 <div class='col-md-6'>
   <h3 class='text-center'>Drinks</h3>
-  <% @items.each do |item| %>
-    <div class='panel panel-default'>
-      <div class='panel-heading'>
-        <h3 class='panel-title'><%= link_to item.title, item %><span class='item-price'>$<%= item.price %></span></h3>
-      </div>
-      <div class='panel-body'>
-        <p><%= item.description %></p>
-        <p><%= image_tag item.photo.url, class: "img-responsive" %></p>
-      </div>
-    </div>
-  <% end %>
+  <%= render partial: @items %>
 </div>
 
 <div class='col-md-6'>
   <h3 class="text-center">Eats</h3>
-  <% @items.each do |item| %>
-    <div class='panel panel-default'>
-      <div class='panel-heading'>
-        <h3 class='panel-title'><%= link_to item.title, item %><span class='item-price'>$<%= item.price %></span></h3>
-      </div>
-      <div class='panel-body'>
-        <p><%= item.description %></p>
-        <p><%= image_tag item.photo.url, class: "img-responsive" %></p>
-      </div>
-    </div>
-  <% end %>
+  <%= render partial: @items %>
 </div>
 
 
