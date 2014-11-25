@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :require_admin
   before_action :load_cart
+  include ActionView::Helpers::TextHelper
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
