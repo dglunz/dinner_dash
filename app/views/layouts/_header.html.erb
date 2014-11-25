@@ -3,11 +3,15 @@
     <ul class="nav nav-pills pull-right">
       <li role="presentation"><%=link_to 'About', '/about' %></li>
       <li role="presentation"><%=link_to 'Menu', items_path %></li>
-        <% if current_user %>
-          <li role="presentation"><%= link_to 'Logout', logout_path, id: 'logout', method: 'delete' %></li>
-        <% else %>
-          <li role="presentation"><%= link_to 'Login', login_path, id: 'login' %></li>
-        <% end %>
+      <% if current_user %>
+        <li role="presentation"><%= link_to 'Logout', logout_path, id: 'logout', method: 'delete' %></li>
+        <li role="presentation"><a href='#'>
+          <span class='glyphicon glyphicon-shopping-cart'></span>
+          <span class="badge">42</span>
+        </a></li>
+      <% else %>
+        <li role="presentation"><%= link_to 'Login', login_path, id: 'login' %></li>
+      <% end %>
     </ul>
   </nav>
   <h3 class="text-muted"><%= link_to 'EspressGo', root_path, id: 'logo' %></h3>
