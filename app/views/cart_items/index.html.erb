@@ -7,10 +7,12 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= item.title %></td>
+        <td><%= link_to item.title, item %></td>
         <td><%= @cart.data[item.id.to_s] %></td>
         <td><%= item.price %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= link_to "Submit Order", new_order_path, class: 'btn btn-default' %>
