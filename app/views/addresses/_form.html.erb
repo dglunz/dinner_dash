@@ -1,38 +1,41 @@
-<%= form_for(@address) do |f| %>
-  <% if @address.errors.any? %>
-   <div id="error_explanation">
+<% if @address.errors.any? %>
+  <div id="error_explanation">
     <h2><%= pluralize(@address.errors.count, "error") %> prohibited
-      this address from being saved:</h2>
-
-      <ul>
-        <% @address.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :street_name %><br>
-    <%= f.text_field :street_name %>
-  </div>
-  <div class="field">
-    <%= f.label :street_number %><br>
-    <%= f.number_field :street_number %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :zip_code %><br>
-    <%= f.number_field :zip_code %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+    this address from being saved:</h2>
+    <ul>
+      <% @address.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
   </div>
 <% end %>
+
+<div class="container">
+  <div class="col-sm-4 col-sm-offset-4">
+    <%= form_for(@address) do |f| %>
+        <div class="form-group">
+        <%= f.label :street_name %><br>
+        <%= f.text_field :street_name, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :street_number %><br>
+        <%= f.number_field :street_number, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :city %><br>
+        <%= f.text_field :city, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :state %><br>
+        <%= f.text_field :state, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :zip_code %><br>
+        <%= f.number_field :zip_code, class: "form-control" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Submit", class: "form-control btn btn-success" %>
+      </div>
+    <% end %>
+  </div>
+</div>

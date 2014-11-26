@@ -6,10 +6,10 @@
         <%= link_to 'Edit', edit_item_path(item) %>
       <% end %>
       <span class='item-price'>$<%= item.price %></span>
-      <%= button_to "Add to Cart", cart_items_path(item_id: item) %>
     </h3>
   </div>
   <div class='panel-body'>
+    <%= button_to "Add to Cart", cart_items_path(item_id: item), class: 'btn btn-default item-price' %>
     <p><%= item.description %></p>
     <p><%= image_tag item.photo.url, class: "img-responsive" %></p>
   </div>
