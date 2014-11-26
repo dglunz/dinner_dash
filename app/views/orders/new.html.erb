@@ -1,2 +1,36 @@
-<h1>Orders#new</h1>
-<p>Find me in app/views/orders/new.html.erb</p>
+<table class="table">
+  <thead>
+    <td>Item</td>
+    <td>Quantity</td>
+    <td>Price</td>
+    <td>Total</td>
+  </thead>
+  <tbody>
+    <% @cart_items.each do |item| %>
+      <tr>
+        <td><%= link_to item.title, item %></td>
+        <td><%= @cart.data[item.id.to_s] %></td>
+        <td><%= item.price %></td>
+        <td><%= item.price * @cart.data[item.id.to_s] %></td>
+      </tr>
+    <% end %>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>Total:</td>
+        <td><%= @cart.cost_total %></td>
+      </tr>
+  </tbody>
+</table>
+
+<%= form_for @order do |f| %>
+  <div class='form-group'>
+    <%= f.label :delivery %>
+    <%= f.check_box :delivery %>
+  </div>
+
+  <div class="button">
+    <%= f.submit "Submit Order", class: "form-control btn btn-success" %>
+  </div>
+<% end %>
+

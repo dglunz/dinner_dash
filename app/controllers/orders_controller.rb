@@ -8,6 +8,8 @@ class OrdersController < ApplicationController
   end
 
   def new
+    @order = Order.new
+    @cart_items = @cart.items
   end
 
   def edit

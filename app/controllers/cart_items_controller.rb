@@ -8,6 +8,6 @@ class CartItemsController < ApplicationController
   end
 
   def index
-    @items = @cart.data.map{|item, quantity| Item.find(item) }
+    @cart_items = @cart.items
   end
 end
