@@ -18,4 +18,12 @@ class Cart
     data.values.sum
   end
 
+  def items
+    data.map{|item, quantity| Item.find(item) }
+  end
+
+  def cost_total
+    items.reduce(0){|sum, item| sum + (item.price * data[item.id.to_s]) }
+  end
+
 end
