@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :current_user, :require_admin
+  before_action :load_cart
+  include ActionView::Helpers::TextHelper
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -13,5 +15,9 @@ class ApplicationController < ActionController::Base
     unless current_user && current_user.is_admin?
       redirect_to root_path, notice: 'Not authorized.'
     end
+  end
+
+  def load_cart
+    @cart = Cart.new(session[:cart])
   end
 end
