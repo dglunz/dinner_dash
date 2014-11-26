@@ -14,7 +14,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to login_path, notice: 'User created. Please log in.'
+      session[:user_id] = @user.id
+      redirect_to root_path, notice: 'User created.'
     else
       flash.now[:notice] = 'User could not be created.'
       render :new

@@ -2,14 +2,14 @@ require 'rails_helper'
 require 'capybara/rails'
 require 'capybara/rspec'
 
-describe 'the addresses view', type: :feature do 
+describe 'the addresses view', type: :feature do
   let(:addresses) { [Address.create(street_name: "Bad Street", street_number: "8000",
                                   city: "Beverly Hills", state: "CA", zip_code: "90210"),
                     Address.create(street_name: "Good Street", street_number: "8000",
                                   city: "Beverly Hills", state: "CA", zip_code: "90210")]
                                    }
 
-  before(:each) do 
+  before(:each) do
     visit addresses_path(addresses)
   end
 
@@ -18,17 +18,17 @@ describe 'the addresses view', type: :feature do
   end
 
   it "has a link to add a new address" do
-    expect(page).to have_link("New Address", href: new_address_path) 
+    expect(page).to have_link("New Address", href: new_address_path)
   end
 
-  it "adds a new address" do 
+  it "adds a new address" do
     page.click_link("New Address")
     page.fill_in("Street name", with: "Stupid Street")
     page.fill_in("Street number", with: "1000")
     page.fill_in("City", with: "Philadelphia")
     page.fill_in("State", with: "PA")
     page.fill_in("Zip code", with: "19089")
-    page.click_button("Create Address")
+    page.click_button("Submit")
     expect(page).to have_content("19089")
   end
 
@@ -44,7 +44,7 @@ describe 'the addresses view', type: :feature do
 
     first(:link, "Edit").click
     page.fill_in("Street name", with: "Awesome street")
-    page.click_button("Update Address")
+    page.click_button("Submit")
     expect(current_path).to eq(address_path(address))
     expect(page).to have_content("Awesome street")
     expect(page).to_not have_content(old_street)
@@ -56,14 +56,14 @@ describe 'the addresses view', type: :feature do
     end
   end
 
-  it "deletes an address" do 
+  it "deletes an address" do
     page.click_link("New Address")
     page.fill_in("Street name", with: "Happy Street")
     page.fill_in("Street number", with: "1000")
     page.fill_in("City", with: "Philadelphia")
     page.fill_in("State", with: "PA")
     page.fill_in("Zip code", with: "19089")
-    page.click_button("Create Address")
+    page.click_button("Submit")
     expect(page).to have_content("19089")
 
     click_on("Back")
@@ -79,7 +79,7 @@ describe 'the addresses view', type: :feature do
   #   end
   # end
 
-  # it 'has a link to add a new order' do 
+  # it 'has a link to add a new order' do
   #   expect(page).to have_link("New order", href: new_order_path(address_id: address.id))
   # end
 
@@ -99,7 +99,7 @@ describe 'the addresses view', type: :feature do
   #   new_order = address.orders.first
   #   old_order = new_order.order
 
-  #   first(:link, 'edit').click 
+  #   first(:link, 'edit').click
   #   page.click_button('Update order')
   #   expect(current_path).to eq(address_path(address))
   #   expect(page).to have_content('')
