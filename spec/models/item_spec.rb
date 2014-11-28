@@ -67,7 +67,9 @@ RSpec.describe Item, :type => :model do
     expect(item).to be_invalid
   end
 
-  xit 'has a default photo if empty' do
+  it 'has a default photo if empty' do
+    item.photo = nil
+    expect(item.photo.options.has_key?(:default_url)).to be true
+    expect(item.photo.options.has_value?('/images/missing_large.png')).to be true
   end
-
 end
