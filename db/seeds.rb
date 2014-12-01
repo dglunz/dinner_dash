@@ -3,8 +3,8 @@ class Seed
     generate_users
     generate_addresses
     generate_categories
-    generate_drink_items
-    generate_eat_items
+    generate_items('drink')
+    generate_items('eat')
   end
 
   def generate_users
@@ -46,51 +46,46 @@ class Seed
 
   def generate_addresses
     4.times do |i|
-      address = Address.create!(
+      Address.create!(
         street_number: Faker::Address.building_number,
         street_name: Faker::Address.street_name,
         city: Faker::Address.city,
         state: Faker::Address.state_abbr,
         zip_code: Faker::Address.zip,
-        user_id: i+1
+        user_id: i + 1
         )
-      puts "Added address for user #{i+1}"
+      puts "Added address for user #{i + 1}"
     end
   end
 
-  def generate_drink_items
+  def generate_items(type)
+    drink1 = %w(Single Double Triple Decaf Tea)
+    drink2 = %w(Latte Cappuccino Latte Macchiato Americano Espresso)
+    eat1   = %w(Vanilla Strawberry Mocha Amaretto Lemon)
+    eat2   = %w(Crepe Souffle Tarte Savarin Brulee Croissant)
+
+    if type == 'drink'
+      item1 = drink1
+      item2 = drink2
+      category = Category.first
+    elsif type == 'eat'
+      item1 = eat1
+      item2 = eat2
+      category = Category.last
+    end
+
     5.times do |i|
-      item = Item.create!(
-        title: "#{%w(Single Double Triple Decaf Tea).sample} " +
-               "#{%w(Latte Cappuccino Latte Macchiato Americano Espresso).sample} " +
-               "#{i+1}",
+      Item.create!(
+        title: "#{item1.sample} #{item2.sample} #{i + 1}",
         description: 'A classic coffee drink made with real craftsmanship',
         price: Faker::Commerce.price,
         photo_file_name: nil,
         photo_content_type: 'image/png',
         photo_file_size: Faker::Number.number(3),
         photo_updated_at: Faker::Date.between(1.week.ago, Date.today),
-        categories: [Category.first]
+        categories: [category]
         )
-      puts "Added drink item #{i+1}"
-    end
-  end
-
-  def generate_eat_items
-    5.times do |i|
-      item = Item.create!(
-        title: "#{%w(Vanilla Strawberry Mocha Amaretto Lemon).sample} " +
-               "#{%w(Crepe Souffle Tarte Savarin Brulee Croissant).sample} " +
-               "#{i+1}",
-        description: 'A classic coffee drink made with real craftsmanship',
-        price: Faker::Commerce.price,
-        photo_file_name: nil,
-        photo_content_type: 'image/png',
-        photo_file_size: Faker::Number.number(3),
-        photo_updated_at: Faker::Date.between(1.week.ago, Date.today),
-        categories: [Category.last]
-        )
-      puts "Added eat item #{i+1}"
+      puts "Added #{type} item #{i + 1}"
     end
   end
 end
