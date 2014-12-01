@@ -1,11 +1,12 @@
-<div class="jumbotron">
+<div class='col-md-8 col-md-offset-2 jumbotron' id='about'>
   <h1>Convenient Craft Coffee</h1>
-  <p class="lead">Are you tired of having to constantly leave the house just to get a gourmet coffee and tasty pastries? Let us deal with the unpleasantries of the outside world for you!</p>
+  <h3>While most places will just pour you an old cup of joe, we flip the script by serving only the finest black gold. In order to ensure the best, we only use beans that are fair-trade, organic, hand-picked, and serenaded nightly.</h3>
+  <%= image_tag 'allthecoffee.gif', class: 'img-rounded img-responsive'%>
+  <h3>Let us deal with the unpleasantries of the outside world for you! Get your legal stimulants delivered to your doorstep. </h3>
     <% if current_user %>
     <h3>Welcome Back <%= link_to current_user.name, current_user %>!</h3>
   <% else %>
     <p><%= link_to 'Sign Up Today', new_user_path, class: 'btn btn-lg btn-success', role: 'button' %></p>
   <% end %>
 </div>
-
 
