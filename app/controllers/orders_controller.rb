@@ -25,7 +25,6 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    binding.pry
     @order.user = @current_user
     @order.pending = true
     if @order.save
