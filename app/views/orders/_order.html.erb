@@ -1,4 +1,7 @@
 <h1>Order <%= order.id %></h1>
 <p><%= order.user.name %></p>
 <p><%= order.status %></p>
+<% @order.items.each do |item| %>
+  <p><%= item.title %></p>
+<% end %>
 <%= order.address %>
