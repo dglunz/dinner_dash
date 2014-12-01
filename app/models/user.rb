@@ -12,8 +12,7 @@ class User < ActiveRecord::Base
                     format: { with: EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   validates :display_name, allow_blank: true, length: { in: 2..32 }
-  validates :password, presence: true, length: { minimum: 6 }
-  validates :password_confirmation, presence: true
+  validates :password, length: { minimum: 6 }, allow_blank: true
 
   def is_admin?
     admin
