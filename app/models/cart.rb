@@ -22,6 +22,12 @@ class Cart
     data.map{|item, quantity| Item.find(item) }
   end
 
+  def order_items
+    o = []
+    data.each {|k,v| v.times { o << Item.find(k) } }
+    o
+  end
+
   def cost_total
     items.reduce(0){|sum, item| sum + (item.price * data[item.id.to_s]) }
   end

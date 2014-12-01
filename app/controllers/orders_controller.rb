@@ -27,8 +27,10 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.user = @current_user
     @order.pending = true
+    @order.items = @cart.order_items
     if @order.save
       flash[:notice] = "Order created"
+      session[:cart] = nil
       redirect_to order_path(@order)
     else
       flash[:notice] = "Order could not be created. Try checking out again."
