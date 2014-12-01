@@ -1,6 +1,6 @@
 class AddressesController < ApplicationController
   before_action :set_address, only: [:show, :edit, :update, :destroy]
-  
+
   def index
     @addresses = Address.all
   end
@@ -20,11 +20,9 @@ class AddressesController < ApplicationController
 
     respond_to do |format|
       if @address.save
-        format.html { redirect_to @address, notice: 'Address was successfuly created'}
-        format.json { render :show, status: :created, location: @address }
+        format.html { redirect_to @address, notice: 'Address was successfuly created' }
       else
         format.html { render :new }
-        format.json { render json: @address.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -32,11 +30,9 @@ class AddressesController < ApplicationController
   def update
     respond_to do |format|
       if @address.update(address_params)
-        format.html { redirect_to @address, notice: "Address was successfuly updated." }
-        format.json { render :show, status: :ok, location: @address }
+        format.html { redirect_to @address, notice: 'Address was successfuly updated.' }
       else
         format.html { render :edit }
-        format.json { render json: @address.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -44,8 +40,7 @@ class AddressesController < ApplicationController
   def destroy
     @address.destroy
     respond_to do |format|
-      format.html { redirect_to addresses_url, notice: "Address was successfully deleted." }
-      format.json { head :no_content }
+      format.html { redirect_to addresses_url, notice: 'Address was successfully deleted.' }
     end
   end
 
@@ -58,5 +53,4 @@ class AddressesController < ApplicationController
   def address_params
     params.require(:address).permit(:street_name, :street_number, :city, :state, :zip_code)
   end
-
 end

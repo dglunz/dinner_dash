@@ -2,7 +2,7 @@ class Cart
   attr_reader :data
 
   def initialize(data)
-    @data = data || Hash.new
+    @data = data || {}
   end
 
   def add_item(item)
@@ -19,17 +19,16 @@ class Cart
   end
 
   def items
-    data.map{|item, quantity| Item.find(item) }
+    data.map { |item, _quantity| Item.find(item) }
   end
 
   def order_items
     o = []
-    data.each {|k,v| v.times { o << Item.find(k) } }
+    data.each { |k, v| v.times { o << Item.find(k) } }
     o
   end
 
   def cost_total
-    items.reduce(0){|sum, item| sum + (item.price * data[item.id.to_s]) }
+    items.reduce(0) { |sum, item| sum + (item.price * data[item.id.to_s]) }
   end
-
 end
