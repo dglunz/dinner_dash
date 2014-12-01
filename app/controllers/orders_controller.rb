@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
       @order = Order.new
       @cart_items = @cart.items
     else
-      flash[:notice] = "You need to be logged in to checkout."
+      flash[:notice] = 'You need to be logged in to checkout.'
       redirect_to login_path
     end
   end
@@ -29,11 +29,11 @@ class OrdersController < ApplicationController
     @order.pending = true
     @order.items = @cart.order_items
     if @order.save
-      flash[:notice] = "Order created"
+      flash[:notice] = 'Order created'
       session[:cart] = nil
       redirect_to order_path(@order)
     else
-      flash[:notice] = "Order could not be created. Try checking out again."
+      flash[:notice] = 'Order could not be created. Try checking out again.'
       redirect_to cart_items_path
     end
   end

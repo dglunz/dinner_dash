@@ -27,7 +27,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -44,7 +43,6 @@ class UsersController < ApplicationController
     @user.destroy
     respond_to do |format|
       format.html { redirect_to user_url, notice: 'User was deleted.' }
-      format.json { head :no_content }
     end
   end
 
@@ -52,8 +50,7 @@ class UsersController < ApplicationController
 
   def correct_user
     @user = User.find(params[:id])
-    redirect_to(root_url) unless current_user?(@user) 
-
+    redirect_to(root_url) unless current_user?(@user)
   end
 
   def user_params
