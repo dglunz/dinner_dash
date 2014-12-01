@@ -17,7 +17,6 @@ describe 'Application authorization', type: :feature do
   end
 
   context 'when logged in as a user' do
-
     it 'can see profile details' do
       user = FactoryGirl.create(:user)
       visit login_path
@@ -40,4 +39,19 @@ describe 'Application authorization', type: :feature do
       expect(page).to have_content('All users')
     end
   end
+
+  context 'as wrong user' do
+    let(:user) { FactoryGirl.create(:user) }
+    let(:wrong_user) { FactoryGirl.create(:user, email: 'wrong@example.com') }
+
+    it 'cannot visit another users page' do
+      visit login_path
+      fill_in 'Email', with: user.email
+      fill_in 'Password', with: user.password
+      click_button 'Login'
+      visit users_path(wrong_user.id)
+      expect(page).not_to have_content('Edit')
+    end
+  end
 end
+
