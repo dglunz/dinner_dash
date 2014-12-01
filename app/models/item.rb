@@ -15,6 +15,8 @@ class Item < ActiveRecord::Base
     content_type: ['image/jpg', 'image/jpeg',
                    'image/png', 'image/gif'] }
 
+  scope :active, -> { where(active: true) }
+
   def self.drinks
     Item.joins(:categories).where(categories: { name: 'drinks' })
   end
