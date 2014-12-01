@@ -1,7 +1,18 @@
 <h1>Order <%= order.id %></h1>
-<p><%= order.user.name %></p>
-<p><%= order.status %></p>
-<% @order.items.each do |item| %>
-  <p><%= item.title %></p>
-<% end %>
+<p>Name: <%= order.user.name %></p>
+<p>Status: <%= order.status %></p>
+<table class="table">
+  <thead>
+    <td>Item</td>
+    <td>Quantity</td>
+  </thead>
+  <tbody>
+    <% order.unique_items.each do |item| %>
+      <tr>
+        <td><%= item.title %></td>
+        <td><%= order.quantity(item.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <%= order.address %>

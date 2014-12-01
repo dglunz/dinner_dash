@@ -10,4 +10,12 @@ class Order < ActiveRecord::Base
   def status
     "pending" if pending
   end
+
+  def quantity(item)
+    items.count(item)
+  end
+
+  def unique_items
+    items.uniq
+  end
 end
