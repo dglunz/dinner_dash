@@ -28,6 +28,7 @@ class OrdersController < ApplicationController
     @order.user = @current_user
     @order.pending = true
     @order.items = @cart.order_items
+    @order.address = nil unless @order.delivery
     if @order.save
       flash[:notice] = 'Order created'
       session[:cart] = nil
@@ -38,7 +39,9 @@ class OrdersController < ApplicationController
     end
   end
 
+  private
+
   def order_params
-    params.require(:order).permit(:delivery, :user)
+    params.require(:order).permit(:delivery, :user, :address_id)
   end
 end
