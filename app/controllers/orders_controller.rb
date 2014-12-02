@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    binding.pry
     @order = Order.new(order_params)
     @order.user = @current_user
     @order.pending = true
@@ -37,6 +38,8 @@ class OrdersController < ApplicationController
       redirect_to cart_items_path
     end
   end
+
+  private
 
   def order_params
     params.require(:order).permit(:delivery, :user, :address_id)
