@@ -1,18 +1,23 @@
 <h1>Welcome, <%= @user.name %></h1>
 
-<h2>Your addresses</h2>
+  <div class="panel panel-default">
+    <div class="panel-heading"><h2>Your addresses</h2></div>
+      <table class="table table-striped table-hover text-center">
+        <tbody>
 
-<ul>
-  <% @user.addresses.each do |address| %>
-    <li><%= address.street_name %></li>
-    <li><%= address.street_number %></li>
-    <li><%= address.city %></li>
-    <li><%= address.state %></li>
-    <li><%= address.zip_code %></li>
-    <%= link_to('Edit', edit_address_path(address)) %>
-    <%= link_to('Place order to this address', new_order_path(address_id: address.id)) %>
-    <% end %>
-</ul>
+        <% @user.addresses.each do |address| %>
+        <tr>
+          <td><%= address.street_name %></td>
+          <td><%= address.street_number %></td>
+          <td><%= address.city %></td>
+          <td><%= address.state %></td>
+          <td><%= address.zip_code %></td>
+          <%= link_to('Edit', edit_address_path(address)) %>
+          <%= link_to('Place order to this address', new_order_path(address_id: address.id)) %>
+          <% end %>
+        </tr>
+        </tbody>
+      </table>
 
 
 <%= link_to 'Add address', new_address_path(user_id: @user.id) %> |
