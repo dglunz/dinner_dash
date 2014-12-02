@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe OrdersController, :type => :controller do
   let(:valid_attributes) {
-    { delivery: true, pending: false }
+    { delivery: false, pending: false }
   }
 
   let(:invalid_attributes) {
