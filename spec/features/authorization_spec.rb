@@ -42,6 +42,12 @@ describe 'Application authorization', type: :feature do
       expect(page).to have_content('Order created')
     end
 
+    it 'cannot go to the admin page' do
+      visit admin_path
+      expect(page).to have_content('Not authorized')
+      expect(page).to_not have_content('Admin Dashboard')
+    end
+
   end
 
   context 'when logged in as an admin' do
