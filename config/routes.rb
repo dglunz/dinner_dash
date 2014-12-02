@@ -17,4 +17,8 @@ Rails.application.routes.draw do
 
   resources :cart_items
 
+  namespace :admin do
+    get '/', to: 'dashboard#index'
+  end
+
 end
