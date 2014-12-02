@@ -10,22 +10,38 @@ describe 'Application authorization', type: :feature do
     end
 
     it 'cannot access a restricted page' do
-      user = FactoryGirl.create(:user)
       visit users_path
       expect(page).to have_content('Not authorized.')
+    end
+
+    it 'cannot checkout a cart to an order' do
+      visit cart_items_path
+      click_link 'Checkout'
+      expect(page).to have_content('You need to be logged in')
     end
   end
 
   context 'when logged in as a user' do
-    it 'can see profile details' do
-      user = FactoryGirl.create(:user)
+    let(:user) { FactoryGirl.create(:user) }
+    before(:each) do
       visit login_path
       fill_in 'Email', with: user.email
       fill_in 'Password', with: user.password
       click_button 'Login'
+    end
+
+    it 'can see profile details' do
       visit user_path(user.id)
       expect(page).to have_content(user.name)
     end
+
+    it 'can checkout a cart to an order' do
+      visit cart_items_path
+      click_link 'Checkout'
+      click_button 'Submit Order'
+      expect(page).to have_content('Order created')
+    end
+
   end
 
   context 'when logged in as an admin' do
