@@ -23,7 +23,8 @@ describe 'the admin page', type: :feature do
       end
 
       it 'takes me to the admin page' do
-
+        click_link 'Admin'
+        expect(page).to have_text('Admin Dashboard')
       end
     end
   end
