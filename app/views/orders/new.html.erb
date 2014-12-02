@@ -26,7 +26,12 @@
 <%= form_for @order do |f| %>
   <div class='form-group'>
     <%= f.label :delivery %>
-    <%= f.check_box :delivery %>
+    <%= f.check_box :delivery, id: "delivery" %>
+  </div>
+
+  <div class='form-group' id="address-form">
+    <%= f.label :addresses %>
+    <%= f.collection_select :address_id, Address.all, :id, :street_name, {}, {multiple: true, class: "form-control" } %>
   </div>
 
   <div class="button">
