@@ -1,6 +1,14 @@
-<h1>All users</h1>
-
-<% @users.each do |user| %>
-	<li><%= user.name %> <%= user.email %> <%= user.display_name %>
-  <%= link_to 'Show', user %></li>
-<% end %>
+  <div class="panel panel-default">
+    <div class="panel-heading"><h2>All users</h2></div>
+      <table class="table table-striped table-hover text-center">
+        <tbody>
+          <tr>
+            <% @users.each do |user| %>
+            	<td><%= user.name %> <%= user.email %> <%= user.display_name %>
+              <%= link_to 'Show', user %></td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
