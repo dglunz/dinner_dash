@@ -18,4 +18,8 @@ class Order < ActiveRecord::Base
   def unique_items
     items.uniq
   end
+
+  def shipping_address
+    delivery ? address.street_name : "Pick-Up"
+  end
 end
