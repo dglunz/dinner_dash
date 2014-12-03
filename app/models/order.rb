@@ -14,7 +14,8 @@ class Order < ActiveRecord::Base
   end
 
   def quantity(item)
-    items.count(item)
+    binding.pry
+    items.map(&:id).count(item)
   end
 
   def unique_items
