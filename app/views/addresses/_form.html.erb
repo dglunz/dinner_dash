@@ -13,13 +13,13 @@
 <div class="container">
   <div class="col-sm-4 col-sm-offset-4">
     <%= form_for(@address) do |f| %>
-        <div class="form-group">
-        <%= f.label :street_name %><br>
-        <%= f.text_field :street_name, class: "form-control" %>
-      </div>
       <div class="form-group">
         <%= f.label :street_number %><br>
         <%= f.number_field :street_number, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :street_name %><br>
+        <%= f.text_field :street_name, class: "form-control" %>
       </div>
       <div class="form-group">
         <%= f.label :city %><br>
