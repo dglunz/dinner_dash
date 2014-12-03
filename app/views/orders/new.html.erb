@@ -9,9 +9,9 @@
     <% @cart_items.each do |item| %>
       <tr>
         <td><%= link_to item.title, item %></td>
-        <td><%= @cart.data[item.id.to_s] %></td>
+        <td><%= @cart.count_of(item) %></td>
         <td><%= item.price %></td>
-        <td><%= item.price * @cart.data[item.id.to_s] %></td>
+        <td><%= @cart.line_total(item) %></td>
       </tr>
     <% end %>
       <tr>
@@ -31,7 +31,7 @@
 
   <div class='form-group' id="address-form">
     <%= f.label :address %>
-    <%= f.collection_select :address_id, Address.all, :id, :street_name, {}, { class: "form-control" } %>
+    <%= f.collection_select :address_id, current_user.addresses, :id, :street_name, {}, { class: "form-control" } %>
   </div>
 
   <div class="button">

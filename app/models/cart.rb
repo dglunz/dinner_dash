@@ -28,6 +28,10 @@ class Cart
     o
   end
 
+  def line_total(item)
+    item.price * count_of(item)
+  end
+
   def cost_total
     items.reduce(0) { |sum, item| sum + (item.price * data[item.id.to_s]) }
   end
