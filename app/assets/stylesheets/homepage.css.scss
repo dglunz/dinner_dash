@@ -32,6 +32,10 @@ a {
   font-size: 18px;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .header {
   border-bottom: 1px solid #e5e5e5;
 }
