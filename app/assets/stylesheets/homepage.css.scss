@@ -32,6 +32,10 @@ a {
   font-size: 18px;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .header {
   border-bottom: 1px solid #e5e5e5;
 }
@@ -117,4 +121,8 @@ a {
 #about {
   background-color: #DCCCBA;
 }
+.user-name {
+  font-size: 24px;
+}
+
 

@@ -1,18 +1,20 @@
-<h1>Order <%= order.id %></h1>
-<p>Name: <%= order.user.name %></p>
-<p>Status: <%= order.status %></p>
-<p>Address: <%= order.shipping_address %></p>
-<table class="table">
-  <thead>
-    <td>Item</td>
-    <td>Quantity</td>
-  </thead>
-  <tbody>
-    <% order.unique_items.each do |item| %>
-      <tr>
-        <td><%= item.title %></td>
-        <td><%= order.quantity(item.id) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="order">
+  <a href=<%= order_path(order) %> ><h2 class="text-center">Order #<%= order.id %></h2></a>
+  <p>Date: <%= order.created_at.strftime('%d/%m/%Y') %></p>
+  <p>Status: <%= order.status %></p>
+  <p>Address: <%= order.shipping_address %></p>
+  <table class="table">
+    <thead>
+      <td>Item</td>
+      <td>Quantity</td>
+    </thead>
+    <tbody>
+      <% order.unique_items.each do |item| %>
+        <tr>
+          <td><%= item.title %></td>
+          <td><%= order.quantity(item.id) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
