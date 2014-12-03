@@ -125,4 +125,12 @@ a:hover {
   font-size: 24px;
 }
 
+.payment {
+  margin-top: 20px;
+}
+
+.stripe-button {
+  @extend .btn;
+  @extend .btn-success;
+}
 
