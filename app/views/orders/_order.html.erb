@@ -1,5 +1,4 @@
-<h1>Order <%= order.id %></h1>
-<p>Name: <%= order.user.name %></p>
+<p>Date: <%= order.created_at.strftime('%d/%m/%Y') %></p>
 <p>Status: <%= order.status %></p>
 <p>Address: <%= order.shipping_address %></p>
 <table class="table">

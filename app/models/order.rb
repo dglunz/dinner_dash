@@ -10,7 +10,7 @@ class Order < ActiveRecord::Base
   validates_presence_of :address, if: :delivery?
 
   def status
-    'pending' if pending
+    'Pending' if pending
   end
 
   def quantity(item)
@@ -22,6 +22,6 @@ class Order < ActiveRecord::Base
   end
 
   def shipping_address
-    delivery ? address.street_name : "Pick-Up"
+    delivery ? address.street_name : 'Pick-Up'
   end
 end
