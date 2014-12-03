@@ -14,7 +14,6 @@ class Order < ActiveRecord::Base
   end
 
   def quantity(item)
-    binding.pry
     items.map(&:id).count(item)
   end
 
