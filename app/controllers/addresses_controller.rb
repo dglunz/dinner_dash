@@ -21,7 +21,7 @@ class AddressesController < ApplicationController
     @address = Address.new(address_params)
     @address.user = current_user
     if @address.save
-      redirect_to @address, notice: 'Address was successfuly created'
+      redirect_to @address.user, notice: 'Address was successfuly created'
     else
       flash.now[:notice] = 'Address could not be created, try again.'
       render :new
