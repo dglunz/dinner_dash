@@ -11,7 +11,7 @@ describe 'Item creation', type: :feature do
 
   context 'when logged in as an admin' do
     let(:admin) { FactoryGirl.create(:admin) }
-    let(:item)  { FactoryGirl.create(:item) }
+    let(:item)  { FactoryGirl.build(:item) }
     let(:category) { FactoryGirl.create(:category) }
 
     before(:each) do

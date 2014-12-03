@@ -34,6 +34,5 @@ FactoryGirl.define do  factory :order do
     title 'Espresso'
     description 'Coffee that has been forcefully brewed with hot water and lots of pressure'
     price 2.99
-    categories FactoryGirl.create_list(:category, 1)
   end
 end
