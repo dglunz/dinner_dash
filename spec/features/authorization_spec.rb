@@ -48,6 +48,21 @@ describe 'Application authorization', type: :feature do
       expect(page).to_not have_content('Admin Dashboard')
     end
 
+    it 'cannot go to the users index page' do
+      visit users_path
+      expect(page).to_not have_content('All users')
+    end
+
+    it 'cannot go to the addresses index page' do
+      visit addresses_path
+      expect(page).to_not have_content('Addresses')
+    end
+
+    it 'cannot go to the orders index page' do
+      visit orders_path
+      expect(page).to_not have_content('Orders')
+    end
+
   end
 
   context 'when logged in as an admin' do
