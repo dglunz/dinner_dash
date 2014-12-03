@@ -12,7 +12,7 @@
         <tr>
           <td><%= link_to item.title, item %></td>
           <td class="text-center"><%= @cart.data[item.id.to_s] %></td>
-          <td class="text-right"><%= item.price %></td>
+          <td class="text-right"><%= "$#{sprintf("%0.2f",item.price)}" %></td>
         </tr>
       <% end %>
     </tbody>

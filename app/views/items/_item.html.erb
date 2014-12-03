@@ -5,7 +5,7 @@
       <% if current_user && current_user.is_admin? %>
         <%= link_to 'Edit', edit_item_path(item) %>
       <% end %>
-      <span class='item-price'>$<%= item.price %></span>
+      <span class='item-price'>$<%= "#{sprintf("%0.2f",item.price)}" %></span>
     </h3>
   </div>
   <div class='panel-body'>
