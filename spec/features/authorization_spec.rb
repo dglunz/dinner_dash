@@ -39,7 +39,7 @@ describe 'Application authorization', type: :feature do
       visit cart_items_path
       click_link 'Checkout'
       click_button 'Submit Order'
-      expect(page).to have_content('Order created')
+      expect(page).to have_content('Select Payment Method')
     end
 
     it 'cannot go to the admin page' do

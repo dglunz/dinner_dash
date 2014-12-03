@@ -1,0 +1,20 @@
+<h1 class="text-center">Select Payment Method</h1>
+<div class="col-sm-12 payment">
+  <% if @order.delivery? %>
+    <div class="col-sm-12 text-center">
+  <% else %>
+    <div class="col-sm-6 text-center">
+  <% end %>
+  <%= form_tag({controller: "charges", action: "create"}, method: "post") do %>
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="Coffee and Pastries"
+              data-amount="<%= @order.stripe_total %>"></script>
+  <% end %>
+  </div>
+  <% unless @order.delivery? %>
+    <div class="col-sm-6 text-center">
+      <%= link_to "Pay on Pick-Up", order_path(@order), class: "btn btn-success" %>
+    </div>
+  <% end %>
+</div>

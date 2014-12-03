@@ -30,9 +30,9 @@ class OrdersController < ApplicationController
     @order.items = @cart.order_items
     @order.address = nil unless @order.delivery
     if @order.save
-      flash[:notice] = 'Order created'
       session[:cart] = nil
-      redirect_to order_path(@order)
+      session[:order] = @order.id
+      redirect_to new_charge_path
     else
       flash[:notice] = 'Order could not be created. Try checking out again.'
       redirect_to cart_items_path

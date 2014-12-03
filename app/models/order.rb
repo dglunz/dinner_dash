@@ -10,7 +10,7 @@ class Order < ActiveRecord::Base
   validates_presence_of :address, if: :delivery?
 
   def status
-    'Pending' if pending
+    pending ? 'Pending' : 'Paid'
   end
 
   def quantity(item)
@@ -23,5 +23,13 @@ class Order < ActiveRecord::Base
 
   def shipping_address
     delivery ? address.street_name : 'Pick-Up'
+  end
+
+  def total
+    items.reduce(0){|total, item| total + item.price}
+  end
+
+  def stripe_total
+    (total * 100).round
   end
 end
