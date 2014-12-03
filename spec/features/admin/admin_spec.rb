@@ -27,6 +27,21 @@ describe 'the admin page', type: :feature do
         expect(page).to have_text('Admin Dashboard')
       end
     end
+
+    describe 'admin page' do
+      it 'has a link to the users index' do
+        expect(page).to have_link('Users')
+      end
+
+      it 'has a link to the orders index' do
+        expect(page).to have_link('Orders')
+      end
+
+      it 'has a link to the items index' do
+        expect(page).to have_link('Menu Items')
+      end
+    end
+  
   end
 
 end
