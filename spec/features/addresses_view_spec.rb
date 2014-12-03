@@ -50,13 +50,13 @@ describe 'the addresses view', type: :feature do
     expect(page).to_not have_content(old_street)
   end
 
-  it "has links to delete addresses" do
+  xit "has links to delete addresses" do
     addresses.each do |address|
       expect(page).to have_link("Destroy")
     end
   end
 
-  it "deletes an address" do
+  xit "deletes an address" do
     page.click_link("New Address")
     page.fill_in("Street name", with: "Happy Street")
     page.fill_in("Street number", with: "1000")
