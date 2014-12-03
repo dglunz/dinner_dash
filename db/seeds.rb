@@ -5,6 +5,7 @@ class Seed
     generate_categories
     generate_items('drink')
     generate_items('eat')
+    generate_orders
   end
 
   def generate_users
@@ -85,7 +86,19 @@ class Seed
         photo_updated_at: Faker::Date.between(1.week.ago, Date.today),
         categories: [category]
         )
-      puts "Added #{type} item #{i + 1}"
+      puts "Added order #{type} item #{i + 1}"
+    end
+  end
+
+  def generate_orders
+    10.times do |i|
+      order = Order.new(user_id: rand(1..4))
+      order.delivery = [true, false].sample
+      order.address = order.user.addresses.first if order.delivery
+      order.items = Item.all.sample(3)
+      order.pending = [true, false].sample
+      order.save!
+      puts "Added #{order.id} for #{order.user.name}"
     end
   end
 end
