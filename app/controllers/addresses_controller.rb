@@ -17,13 +17,12 @@ class AddressesController < ApplicationController
 
   def create
     @address = Address.new(address_params)
-
-    respond_to do |format|
-      if @address.save
-        format.html { redirect_to @address, notice: 'Address was successfuly created' }
-      else
-        format.html { render :new }
-      end
+    @address.user = current_user
+    if @address.save
+      redirect_to @address, notice: 'Address was successfuly created'
+    else
+      flash.now[:notice] = 'Address could not be created, try again.'
+      render :new
     end
   end
 
