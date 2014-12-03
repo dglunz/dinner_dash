@@ -4,7 +4,7 @@
   <%= image_tag 'allthecoffee.gif', class: 'img-rounded img-responsive'%>
   <h3>Let us deal with the unpleasantries of the outside world for you! Get your legal stimulants delivered to your doorstep. </h3>
     <% if current_user %>
-    <h3>Welcome Back <%= link_to current_user.name, current_user %>!</h3>
+    <h3>Welcome back <%= link_to current_user.name, current_user, class: "user-name"%>!</h3>
   <% else %>
     <p><%= link_to 'Sign Up Today', new_user_path, class: 'btn btn-lg btn-success', role: 'button' %></p>
   <% end %>
