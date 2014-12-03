@@ -3,7 +3,7 @@
 <div class="panel panel-default">
   <div class="panel-heading"><h2>Your Addresses</h2></div>
   <div class="panel-body">
-    <%= render partial: @user.addresses %>
+    <%= render partial: 'addresses/multiple', locals: {addresses: @user.addresses} %>
     <%= link_to 'Add Address', new_address_path %>
   </div>
 </div>

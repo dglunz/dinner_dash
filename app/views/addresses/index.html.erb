@@ -1,10 +1,9 @@
   <div class="panel panel-default">
     <div class="panel-heading"><h2>Addresses</h2></div>
     <div class="panel-body">
-      <%= render partial: @addresses %>
-    </div>
+      <%= render partial: "multiple", locals: {addresses: @addresses} %>
+      <%= link_to "New Address", new_address_path %>
     </div>
 </div>
 
-<%= link_to "New Address", new_address_path %>
 

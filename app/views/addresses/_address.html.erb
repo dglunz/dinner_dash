@@ -1,24 +1,9 @@
-<table class="table table-striped text-center">
-  <thead>
-    <tr>
-      <th class="text-center">Street number</th>
-        <th class="text-center">Street name</th>
-        <th class="text-center">City</th>
-        <th class="text-center">State</th>
-        <th class="text-center">Zip Code</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= address.street_number %></td>
-        <td><%= address.street_name %></td>
-        <td><%= address.city %></td>
-        <td><%= address.state %></td>
-        <td><%= address.zip_code %></td>
-        <td><%= link_to 'Edit', edit_address_path(address) %></td>
-      </tr>
-  </tbody>
-</table>
-
+<tr>
+  <td><%= address.street_number %></td>
+  <td><%= address.street_name %></td>
+  <td><%= address.city %></td>
+  <td><%= address.state %></td>
+  <td><%= address.zip_code %></td>
+  <td><%= link_to 'Edit', edit_address_path(address) %></td>
+</tr>
 
