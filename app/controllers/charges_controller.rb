@@ -1,12 +1,14 @@
 class ChargesController < ApplicationController
   def new
+    @order = Order.find_by(id: session[:order])
   end
 
   def create
-    @amount = 500
+    @order = Order.find_by(id: session[:order])
+    @amount = @order.stripe_total
 
     customer = Stripe::Customer.create(
-      email: 'example@stripe.com',
+      email: current_user.email,
       card: params[:stripeToken]
     )
 
@@ -17,9 +19,12 @@ class ChargesController < ApplicationController
       currency: 'usd'
     )
 
+    session[:order] = nil
+    @order.update_attributes(pending: false)
+    redirect_to order_path(@order), notice: "Payment of #{@order.total} accepted"
+
   rescue Stripe::CardError => e
     flash[:error] = e.message
-    redirect_to charges_path
   end
 
 end
