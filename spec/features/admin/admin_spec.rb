@@ -29,6 +29,10 @@ describe 'the admin page', type: :feature do
     end
 
     describe 'admin page' do
+      before do
+        click_link 'Admin'
+      end
+
       it 'has a link to the users index' do
         expect(page).to have_link('Users')
       end
@@ -41,7 +45,5 @@ describe 'the admin page', type: :feature do
         expect(page).to have_link('Menu Items')
       end
     end
-  
   end
-
 end
