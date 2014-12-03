@@ -14,7 +14,7 @@ RSpec.describe AddressesController, :type => :controller do
   let(:valid_session) { {} }
 
   describe "GET index" do
-    it "assigns all addresses as @addresses" do
+    xit "assigns all addresses as @addresses" do
       address = Address.create! valid_attributes
       get :index, {}, valid_session
       expect(assigns(:addresses)).to eq([address])
