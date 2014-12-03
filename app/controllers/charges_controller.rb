@@ -21,7 +21,7 @@ class ChargesController < ApplicationController
 
     session[:order] = nil
     @order.update_attributes(pending: false)
-    redirect_to order_path(@order), notice: "Payment of #{@order.total} accepted"
+    redirect_to order_path(@order), notice: "Payment of $#{@order.total} accepted"
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
