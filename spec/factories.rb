@@ -25,4 +25,15 @@ FactoryGirl.define do  factory :order do
     zip_code { Faker::Address.zip }
     user_id 0
   end
+
+  factory :category do
+    name 'drinks'
+  end
+
+  factory :item do
+    title 'Espresso'
+    description 'Coffee that has been forcefully brewed with hot water and lots of pressure'
+    price 2.99
+    categories FactoryGirl.create_list(:category, 1)
+  end
 end
