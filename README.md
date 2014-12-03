@@ -1,6 +1,4 @@
-# Dinner Dash
-
-## [EspressGo](http://espressgo.herokuapp.com/)
+# [EspressGo](http://espressgo.herokuapp.com/)
 
 [![Stories in Ready](https://badge.waffle.io/dglunz/dinner_dash.png?label=ready&title=Ready)](http://waffle.io/dglunz/dinner_dash)
 
