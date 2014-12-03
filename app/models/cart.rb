@@ -23,9 +23,11 @@ class Cart
   end
 
   def order_items
-    o = []
-    data.each { |k, v| v.times { o << Item.find(k) } }
-    o
+    data.map { |item, quantity| quantity.times.map { Item.find(item) } }.flatten
+  end
+
+  def line_total(item)
+    item.price * count_of(item)
   end
 
   def cost_total
