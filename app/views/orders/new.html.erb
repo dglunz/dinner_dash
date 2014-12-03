@@ -1,41 +1,42 @@
-<table class="table">
-  <thead>
-    <td>Item</td>
-    <td>Quantity</td>
-    <td>Price</td>
-    <td>Total</td>
-  </thead>
-  <tbody>
-    <% @cart_items.each do |item| %>
-      <tr>
-        <td><%= link_to item.title, item %></td>
-        <td><%= @cart.data[item.id.to_s] %></td>
-        <td><%= item.price %></td>
-        <td><%= item.price * @cart.data[item.id.to_s] %></td>
-      </tr>
-    <% end %>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>Total:</td>
-        <td><%= @cart.cost_total %></td>
-      </tr>
-  </tbody>
-</table>
+<div class="col-md-8 col-md-offset-2">
+  <table class="table">
+    <thead>
+      <td>Item</td>
+      <td>Quantity</td>
+      <td>Price</td>
+      <td>Total</td>
+    </thead>
+    <tbody>
+      <% @cart_items.each do |item| %>
+        <tr>
+          <td><%= link_to item.title, item %></td>
+          <td><%= @cart.data[item.id.to_s] %></td>
+          <td><%= item.price %></td>
+          <td><%= item.price * @cart.data[item.id.to_s] %></td>
+        </tr>
+      <% end %>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Total:</td>
+          <td><%= @cart.cost_total %></td>
+        </tr>
+    </tbody>
+  </table>
 
-<%= form_for @order do |f| %>
-  <div class='form-group'>
-    <%= f.label :delivery %>
-    <%= f.check_box :delivery, id: "delivery" %>
-  </div>
+  <%= form_for @order do |f| %>
+    <div class='form-group'>
+      <%= f.label :delivery %>
+      <%= f.check_box :delivery, id: "delivery" %>
+    </div>
 
-  <div class='form-group' id="address-form">
-    <%= f.label :address %>
-    <%= f.collection_select :address_id, Address.all, :id, :street_name, {}, { class: "form-control" } %>
-  </div>
+    <div class='form-group' id="address-form">
+      <%= f.label :address %>
+      <%= f.collection_select :address_id, Address.all, :id, :street_name, {}, { class: "form-control" } %>
+    </div>
 
-  <div class="button">
-    <%= f.submit "Submit Order", class: "form-control btn btn-success" %>
-  </div>
-<% end %>
-
+    <div class="button">
+      <%= f.submit "Submit Order", class: "form-control btn btn-success" %>
+    </div>
+  <% end %>
+</div>
