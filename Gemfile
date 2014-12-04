@@ -17,6 +17,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'unicorn'
 gem 'stripe'
 gem 'rails_admin'
+gem 'ransack'
 
 group :development, :test do
   gem 'rspec-rails'
