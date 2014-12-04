@@ -1,7 +1,7 @@
 class AddressesController < ApplicationController
   before_action :set_address, only: [:show, :edit, :update, :destroy]
   before_action :require_admin, only: [:index]
-  before_action :current_user, only: [:show]
+  before_action :current_user, only: [:show, :new, :create, :edit, :update]
 
   def index
     @addresses = Address.all
