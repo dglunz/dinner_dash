@@ -6,6 +6,10 @@ RailsAdmin.config do |config|
     redirect_to main_app.root_path unless current_user.try(:admin?)
   end
 
+  config.model 'User' do
+    visible false
+  end
+
   config.actions do
     dashboard
     index
