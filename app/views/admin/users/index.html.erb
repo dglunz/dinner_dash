@@ -1,0 +1,20 @@
+<h1>Users</h1>
+
+<div class="user">
+  <table class="table">
+    <thead>
+      <td>Name</td>
+      <td>Display Name</td>
+      <td>Email</td>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= link_to user.name, "/admin/users/#{user.id}/edit" %></td>
+          <td><%= user.display_name %></td>
+          <td><%= user.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
