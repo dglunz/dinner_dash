@@ -3,7 +3,8 @@ class ItemsController < ApplicationController
   before_action :require_admin, only: [:edit, :new, :create, :destroy]
 
   def index
-    @items = Item.all
+    @search = Item.search(params[:q])
+    @items = @search.result
   end
 
   def show
