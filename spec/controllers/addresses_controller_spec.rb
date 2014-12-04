@@ -13,14 +13,6 @@ RSpec.describe AddressesController, :type => :controller do
 
   let(:valid_session) { {} }
 
-  describe "GET index" do
-    xit "assigns all addresses as @addresses" do
-      address = Address.create! valid_attributes
-      get :index, {}, valid_session
-      expect(assigns(:addresses)).to eq([address])
-    end
-  end
-
   describe "GET show" do
     it "assigns the requested person as @person" do
       address = Address.create! valid_attributes
@@ -44,36 +36,15 @@ RSpec.describe AddressesController, :type => :controller do
     end
   end
 
-  describe "POST create" do
-    describe "with valid params" do
-      xit "creates a new Address" do
-        expect {
-          post :create, {:address => valid_attributes}, valid_session
-        }.to change(Address, :count).by(1)
-      end
-
-      xit "assigns a newly created address as @address" do
-        post :create, {:address => valid_attributes}, valid_session
-        expect(assigns(:address)).to be_a(Address)
-        expect(assigns(:address)).to be_persisted
-      end
-
-      xit "redirects to the created address" do
-        post :create, {:address => valid_attributes}, valid_session
-        expect(response).to redirect_to(Address.last)
-      end
+  describe "with invalid params" do
+    it "assigns a newly created by unsaved address as @address" do
+      post :create, {:address => invalid_attributes}, valid_session
+      expect(assigns(:address)).to be_a_new(Address)
     end
 
-    describe "with invalid params" do
-      it "assigns a newly created by unsaved address as @address" do
-        post :create, {:address => invalid_attributes}, valid_session
-        expect(assigns(:address)).to be_a_new(Address)
-      end
-
-      it "re-renders the 'new' template" do
-        post :create, {:address => invalid_attributes}, valid_session
-        expect(response).to render_template("new")
-      end
+    it "re-renders the 'new' template" do
+      post :create, {:address => invalid_attributes}, valid_session
+      expect(response).to render_template("new")
     end
   end
 
