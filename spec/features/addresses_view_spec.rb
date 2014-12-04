@@ -27,10 +27,6 @@ describe 'the addresses view', type: :feature do
     expect(page).to have_content('Addresses')
   end
 
-  xit "has a link to add a new address" do
-    expect(page).to have_content('Addresses')
-  end
-
   it "adds a new address" do
     page.click_link("Add Address")
     page.fill_in("Street name", with: "Stupid Street")
@@ -40,46 +36,6 @@ describe 'the addresses view', type: :feature do
     page.fill_in("Zip code", with: "19089")
     page.click_button("Submit")
     expect(page).to have_content("19089")
-  end
-
-  xit "has links to edit addresses" do
-    addresses.each do |address|
-      expect(page).to have_link("Edit", href: edit_address_path(address))
-    end
-  end
-
-  xit "edits an address" do
-    address = addresses.first
-    old_street = address.street_name
-
-    first(:link, "Edit").click
-    page.fill_in("Street name", with: "Awesome street")
-    page.click_button("Submit")
-    expect(current_path).to eq(address_path(address))
-    expect(page).to have_content("Awesome street")
-    expect(page).to_not have_content(old_street)
-  end
-
-  xit "has links to delete addresses" do
-    addresses.each do |address|
-      expect(page).to have_link("Destroy")
-    end
-  end
-
-  xit "deletes an address" do
-    page.click_link("New Address")
-    page.fill_in("Street name", with: "Happy Street")
-    page.fill_in("Street number", with: "1000")
-    page.fill_in("City", with: "Philadelphia")
-    page.fill_in("State", with: "PA")
-    page.fill_in("Zip code", with: "19089")
-    page.click_button("Submit")
-    expect(page).to have_content("19089")
-
-    click_on("Back")
-    all("#delete").last.click
-    expect(current_path).to eq(addresses_path)
-    expect(page).to_not have_content("Happy Street")
   end
 end
 
