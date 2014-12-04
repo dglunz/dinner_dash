@@ -1,0 +1,17 @@
+<table class="table table-striped text-center">
+  <thead>
+    <tr>
+      <th class="text-center">Name</th>
+        <th class="text-center">Display Name</th>
+        <th class="text-center">Email</th>
+      </tr>
+    <tbody>
+      <tr>
+        <td><%= @user.name %></td>
+        <td><%= @user.display_name %></td>
+        <td><%= @user.email %></td>
+        <td><%= link_to 'Edit', edit_user_path(@user) %></td>
+      </tr>
+    </tbody>
+    </thead>
+</table>
