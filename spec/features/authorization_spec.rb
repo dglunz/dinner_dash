@@ -72,8 +72,8 @@ describe 'Application authorization', type: :feature do
       fill_in 'Email', with: user.email
       fill_in 'Password', with: user.password
       click_button 'Login'
-      visit users_path
-      expect(page).to have_content('All users')
+      visit admin_users_path
+      expect(page).to have_content('Users')
     end
   end
 
