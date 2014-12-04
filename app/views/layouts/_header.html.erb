@@ -4,7 +4,7 @@
       <li role="presentation"><%=link_to 'Menu', items_path %></li>
       <% if current_user %>
         <% if current_user.is_admin? %>
-          <li role="presentation"><%= link_to 'Admin', admin_path, id: 'admin' %></li>
+          <li role="presentation"><%= link_to 'Admin', rails_admin_path, id: 'admin' %></li>
         <% end %>
         <li role="presentation"><%= link_to 'User', user_path(current_user) %></li>
         <li role="presentation"><%= link_to 'Logout', logout_path, id: 'logout', method: 'delete' %></li>

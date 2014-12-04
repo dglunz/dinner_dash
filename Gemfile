@@ -16,6 +16,7 @@ gem 'spring',        group: :development
 gem 'bcrypt', '~> 3.1.7'
 gem 'unicorn'
 gem 'stripe'
+gem 'rails_admin'
 
 group :development, :test do
   gem 'rspec-rails'
