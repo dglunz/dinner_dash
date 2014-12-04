@@ -10,4 +10,16 @@ class CartItemsController < ApplicationController
   def index
     @cart_items = @cart.items
   end
+
+  def plus
+    item = Item.find_by(id: params["item"].to_i)
+    @cart.add_item(item)
+    redirect_to cart_items_path
+  end
+
+  def minus
+    item = Item.find_by(id: params["item"].to_i)
+    @cart.remove_item(item)
+    redirect_to cart_items_path
+  end
 end

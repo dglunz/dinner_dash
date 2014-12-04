@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   delete '/logout', to: "sessions#destroy"
 
   resources :cart_items
+  post '/cart_items/plus', to: "cart_items#plus"
+  post '/cart_items/minus', to: "cart_items#minus"
 
   resources :charges
 
