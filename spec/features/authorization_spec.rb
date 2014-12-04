@@ -43,8 +43,7 @@ describe 'Application authorization', type: :feature do
     end
 
     it 'cannot go to the admin page' do
-      visit admin_path
-      expect(page).to have_content('Not authorized')
+      visit rails_admin_path
       expect(page).to_not have_content('Admin Dashboard')
     end
 
