@@ -10,6 +10,10 @@ class Cart
     data[item.id.to_s] += 1
   end
 
+  def remove_item(item)
+    data[item.id.to_s] -= 1 unless data[item.id.to_s] <= 0
+  end
+
   def count_of(item)
     data[item.id.to_s]
   end

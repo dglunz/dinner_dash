@@ -11,7 +11,7 @@
       <% @cart_items.each do |item| %>
         <tr>
           <td><%= link_to item.title, item %></td>
-          <td class="text-center"><%= @cart.data[item.id.to_s] %></td>
+          <td class="text-center"><%= link_to "-", "#", :onclick => "removeItem(#{item.id})" %> <%= @cart.count_of(item) %> <%= link_to "+", "#", :onclick => "addItem(#{item.id})" %></td>
           <td class="text-right"><%= "$#{sprintf("%0.2f",item.price)}" %></td>
         </tr>
       <% end %>
