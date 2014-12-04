@@ -8,7 +8,7 @@ class Item < ActiveRecord::Base
                     numericality: { greater_than_or_equal_to: 0 },
                     format: { with: /\d+(\.\d{1,2})?/ }
 
-  has_attached_file :photo, styles: { small: '60x60', large: '300x300#' },
+  has_attached_file :photo, styles: { small: '60x60', large: '300x300>' },
                             default_url: '/images/missing_large.png'
 
   validates_attachment :photo, content_type: {
