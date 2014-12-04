@@ -7,14 +7,24 @@
     <thead>
       <td>Item</td>
       <td>Quantity</td>
+      <td>Price</td>
+      <td>Total</td>
     </thead>
     <tbody>
       <% order.unique_items.each do |item| %>
         <tr>
           <td><%= item.title %></td>
           <td><%= order.quantity(item.id) %></td>
+          <td><%= order.display(item.price) %></td>
+          <td><%= order.display(order.line_total(item)) %></td>
         </tr>
       <% end %>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>Total:</td>
+        <td><%= order.display(order.total) %></td>
+      </tr>
     </tbody>
   </table>
 </div>

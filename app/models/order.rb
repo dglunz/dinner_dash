@@ -25,11 +25,19 @@ class Order < ActiveRecord::Base
     delivery ? address.street_name : 'Pick-Up'
   end
 
+  def line_total(item)
+    item.price * quantity(item.id)
+  end
+
   def total
     items.reduce(0){|total, item| total + item.price}
   end
 
   def stripe_total
     (total * 100).round
+  end
+
+  def display(price)
+    "$#{sprintf("%0.2f", price)}"
   end
 end
