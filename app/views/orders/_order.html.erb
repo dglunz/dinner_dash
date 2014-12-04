@@ -13,7 +13,7 @@
     <tbody>
       <% order.unique_items.each do |item| %>
         <tr>
-          <td><%= item.title %></td>
+          <td><%= link_to item.title, item_path(item) %></td>
           <td><%= order.quantity(item.id) %></td>
           <td><%= order.display(item.price) %></td>
           <td><%= order.display(order.line_total(item)) %></td>
