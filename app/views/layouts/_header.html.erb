@@ -10,7 +10,6 @@
         <li role="presentation"><%= link_to 'Logout', logout_path, id: 'logout', method: 'delete' %></li>
       <% else %>
         <li role="presentation"><%= link_to 'Login', login_path, id: 'login' %></li>
-        <li role="presentation"><%= link_to "Sign Up", new_user_path %></li>
       <% end %>
       <li role="presentation"><a href='<%= cart_items_path %>'>
         <span class='glyphicon glyphicon-shopping-cart'></span>
