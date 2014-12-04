@@ -1,10 +1,9 @@
 <h1 class= "text-center">Menu</h1>
 <div class='text-center'>
-
   <%= search_form_for @search do |f| %>
-      <%= hidden_field_tag :title_cont, "Title contains" %>
-      <%= f.text_field :title_cont, name: 'title', class: "input-sm search-field" %>
-      <%= f.submit "search", name: nil, class: "btn btn-success"  %>
+    <%= hidden_field_tag :title_cont, "Title contains" %>
+    <%= f.text_field :title_cont, class: "input-sm search-field" %>
+    <%= f.submit "search", name: nil, class: "btn btn-success"  %>
   <% end %>
 </div>
 
