@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :orders
 
   resources :addresses
@@ -15,9 +16,9 @@ Rails.application.routes.draw do
 
   resources :cart_items
 
-  namespace :admin do
-    get '/', to: 'dashboard#index'
-  end
+  # namespace :admin do
+  #   get '/', to: 'dashboard#index'
+  # end
 
   resources :charges
 

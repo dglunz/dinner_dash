@@ -7,4 +7,11 @@ class Address < ActiveRecord::Base
   validates :city, presence: true
   validates :state, presence: true
   validates :zip_code, presence: true
+
+  rails_admin do
+    configure :orders do
+      label 'Orders'
+    end
+  end
+
 end

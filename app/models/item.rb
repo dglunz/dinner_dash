@@ -17,6 +17,12 @@ class Item < ActiveRecord::Base
 
   scope :active, -> { where(active: true) }
 
+  rails_admin do
+    configure :categories do
+      label 'Categories'
+    end
+  end
+
   def self.drinks
     Item.joins(:categories).where(categories: { name: 'drinks' })
   end
